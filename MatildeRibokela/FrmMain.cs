@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,20 +20,18 @@ namespace MatildeRibokela
 {
     public partial class FrmMain : Form
     {
-        
+        UCUpload ucUpload;
+        UCListaArq uCListaArq;
         Movimento movimento;
-        Arquivo arquivoBLL;
-        ArquivoDTO arquivo;
-        Categoria categoria;
-        UCArqv temp;
+
         public FrmMain()
         {
             InitializeComponent();
+            ucUpload = new UCUpload();
+            uCListaArq = new UCListaArq();
             movimento = new Movimento(this);
             movimento.DarMovimento(PanelTop);
-            arquivo = new ArquivoDTO();
-            arquivoBLL = new Arquivo();
-            categoria = new Categoria();
+
         }
 
         private const int shadow = 0x00020000;
@@ -49,14 +48,11 @@ namespace MatildeRibokela
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+
             if (new Arquivo().VerifyState().Count > 0)
             {
-                new FrmWarning().ShowDialog();
+                new FrmAviso().ShowDialog();
             }
-
-            Categoria.DataSource = categoria.List();
-            Categoria.DisplayMember = "descricao";
-            Categoria.ValueMember = "id";
         }
 
         private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
@@ -66,13 +62,20 @@ namespace MatildeRibokela
 
         private void button1_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            pictureBox1.ImageLocation = Application.StartupPath+@"\Imagens\icons8-home-24.png";
-            pictureBox1.SizeMode = PictureBoxSizeMode.Normal;
-            label1.Text = "Adicionar arquivo";
-
+            MudarTela(ucUpload, "Adicionar arquivo");
         }
-     
+
+        private void MudarTela(UserControl tela, string nomeTela)
+        {
+            panel1.Visible = true;
+            pictureBox4.Visible = true;
+            pictureBox1.ImageLocation = Application.StartupPath + @"\Imagens\icons8-home-24.png";
+            pictureBox1.SizeMode = PictureBoxSizeMode.Normal;
+            label1.Text = nomeTela;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(tela);
+        }
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -90,40 +93,32 @@ namespace MatildeRibokela
 
         private void pictureBox1_MouseHover(object sender, EventArgs e)
         {
-            if (panel1.Visible)
-            { 
+            if (panel1.Controls.Count > 0)
+            {
                 pictureBox1.BackColor = Color.FromArgb(231, 244, 231);
             }
         }
 
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
-            if (panel1.Visible)
+            if (panel1.Controls.Count > 0)
             {
                 pictureBox1.BackColor = Color.White;
             }
         }
 
-        private void Mostrar(ArquivoDTO arquivo)
-        {
-            UCArqv uCArqv = new UCArqv(arquivo);
-            temp = uCArqv;
-            uCArqv.Top = PUpload.Height / 2 - uCArqv.Height / 2;
-            uCArqv.Left = PUpload.Width / 2 - uCArqv.Width / 2;
-            PUpload.Controls.Add(uCArqv);
-            button3.Visible = false;
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            MudarTela();
+            Voltar();
         }
 
-        private void MudarTela() 
+        private void Voltar()
         {
-            if (panel1.Visible)
+            if (panel1.Controls.Count > 0)
             {
                 panel1.Visible = false;
+                pictureBox4.Visible = false;
                 pictureBox1.ImageLocation = Application.StartupPath + @"\Imagens\logo.png";
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBox1.BackColor = Color.White;
@@ -132,48 +127,22 @@ namespace MatildeRibokela
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            openFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            openFileDialog1.Filter = "Todos ficheiros (*.*)|*.*";
-            openFileDialog1.RestoreDirectory = true;
-            DialogResult result = openFileDialog1.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                FileInfo fileInfo = new FileInfo(openFileDialog1.FileName);
-                arquivo.Caminho = openFileDialog1.FileName;
-                arquivo.Nome = Path.GetFileName(arquivo.Caminho);
-                arquivo.Tamanho = fileInfo.Length / 1024;
-                Mostrar(arquivo);
-            }
+
         }
 
         private void PUpload_DragDrop(object sender, DragEventArgs e)
         {
-            var arqv = e.Data.GetData(DataFormats.FileDrop);
-            if (arqv != null)
-            {
-                var nomeArquivos = arqv as string[];
-                if (nomeArquivos.Length > 0)
-                {
-                    arquivo.Caminho = nomeArquivos[0];
-                    arquivo.Nome = Path.GetFileName(arquivo.Caminho);
-                    arquivo.Tamanho = new FileInfo(arquivo.Caminho).Length / (1024);
-                    Mostrar(arquivo);
-                }
-            }
+
         }
 
         private void PUpload_DragEnter(object sender, DragEventArgs e)
         {
-            e.Effect = DragDropEffects.All;
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            arquivo.Categoria = (CategoriaDTO)Categoria.SelectedItem;
-            arquivo.DataEntrada = DataEntrada.Value.ToUniversalTime();
-            arquivoBLL.upload(arquivo, Application.StartupPath);
-            PUpload.Controls.Remove(temp);
-            button3.Visible = true;
+
         }
 
         private void pictureBox4_MouseHover(object sender, EventArgs e)
@@ -188,13 +157,17 @@ namespace MatildeRibokela
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            MudarTela();
+            Voltar();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            PUpload.Controls.Remove(temp);
-            button3.Visible = true;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MudarTela(uCListaArq, "Lista arquivos");
         }
     }
 }

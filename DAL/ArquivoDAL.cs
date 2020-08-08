@@ -31,16 +31,53 @@ namespace DAL
             return Id;
         }
 
-        public DataTable VerifyState() 
+        public int Detele(long Id)
         {
-                using (MySqlConnection ConexaoBD = new MySqlConnection(StrConexao))
+            int resultado = 0;
+            using (var ConexaoBD = new MySqlConnection(StrConexao))
+            {
+                ConexaoBD.Open();
+                string sql = "DELETE FROM arquivo WHERE id = @CodigoArq";
+                resultado = ConexaoBD.Execute(sql, new { CodigoArq = Id});
+            }
+
+            return resultado;
+        }
+
+        public DataTable VerifyState()
+        {
+            using (MySqlConnection ConexaoBD = new MySqlConnection(StrConexao))
+            {
+                DataTable dt = new DataTable();
+                string sql = "SELECT * FROM arquivo WHERE DATE_SUB(data_upload, INTERVAL 5 DAY) = CURDATE()";
+                var reader = ConexaoBD.ExecuteReader(sql);
+                dt.Load(reader);
+                return dt;
+            }
+        }
+
+        public DataTable List(string TheSearch)
+        {
+            using (var ConexaoBD = new MySqlConnection(StrConexao))
+            {
+                DataTable dt = new DataTable();
+
+                string sql = "SELECT * FROM arquivo";
+
+                if (!string.IsNullOrEmpty(TheSearch))
                 {
-                    DataTable dt = new DataTable();
-                    string sql = "SELECT * FROM arquivo WHERE DATE_SUB(data_upload, INTERVAL 5 DAY) = CURDATE()";
+                    sql += " WHERE caminho LIKE @Caminho";
+                    var reader = ConexaoBD.ExecuteReader(sql, new { Caminho = "%" + TheSearch + "%" });
+                    dt.Load(reader);
+                }
+                else
+                {
                     var reader = ConexaoBD.ExecuteReader(sql);
                     dt.Load(reader);
-                    return dt;
                 }
+
+                return dt;
+            }
         }
     }
 }
