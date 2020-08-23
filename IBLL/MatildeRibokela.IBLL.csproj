@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7BC0266D-8FE6-441C-91DB-0A77C831D665}</ProjectGuid>
+    <ProjectGuid>{562CAEE2-53B4-4609-86E2-EB3487AC4626}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BLL</RootNamespace>
-    <AssemblyName>BLL</AssemblyName>
+    <RootNamespace>IBLL</RootNamespace>
+    <AssemblyName>IBLL</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,18 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Arquivo.cs" />
-    <Compile Include="Categoria.cs" />
+    <Compile Include="IArguidoBLL.cs" />
+    <Compile Include="IDetencaoBLL.cs" />
+    <Compile Include="IPrazoBLL.cs" />
+    <Compile Include="IProcessoBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{CF645D9C-072D-44A7-8965-47984E104FB9}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{8605E114-77C4-4845-A265-60FDA388E67E}</Project>
-      <Name>DTO</Name>
+    <ProjectReference Include="..\DTO\MatildeRibokela.DTO.csproj">
+      <Project>{8605e114-77c4-4845-a265-60fda388e67e}</Project>
+      <Name>MatildeRibokela.DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

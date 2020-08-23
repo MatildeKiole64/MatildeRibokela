@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8605E114-77C4-4845-A265-60FDA388E67E}</ProjectGuid>
+    <ProjectGuid>{7BC0266D-8FE6-441C-91DB-0A77C831D665}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DTO</RootNamespace>
-    <AssemblyName>DTO</AssemblyName>
+    <RootNamespace>BLL</RootNamespace>
+    <AssemblyName>BLL</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,9 +41,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArquivoDTO.cs" />
-    <Compile Include="CategoriaDTO.cs" />
+    <Compile Include="ArguidoBLL.cs" />
+    <Compile Include="DetencaoBLL.cs" />
+    <Compile Include="PrazoBLL.cs" />
+    <Compile Include="ProcessoBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\MatildeRibokela.DAL.csproj">
+      <Project>{CF645D9C-072D-44A7-8965-47984E104FB9}</Project>
+      <Name>MatildeRibokela.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\MatildeRibokela.DTO.csproj">
+      <Project>{8605E114-77C4-4845-A265-60FDA388E67E}</Project>
+      <Name>MatildeRibokela.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IBLL\MatildeRibokela.IBLL.csproj">
+      <Project>{562CAEE2-53B4-4609-86E2-EB3487AC4626}</Project>
+      <Name>MatildeRibokela.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MatildeRibokela.IDAL\MatildeRibokela.IDAL.csproj">
+      <Project>{7f789d6f-5418-4ceb-879b-d67509c55974}</Project>
+      <Name>MatildeRibokela.IDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

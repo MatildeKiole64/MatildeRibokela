@@ -37,8 +37,12 @@
       <HintPath>C:\Users\Anderson M Kiole\Downloads\[FTUApps.com] - Guna UI Framework Ultimate v2.0.0.1 + Keygen\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Siticone.UI">
+      <HintPath>C:\Users\Anderson M Kiole\Downloads\Siticone.UI-WinForms (1)\Siticone.UI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,11 +55,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmAviso.cs">
+    <Compile Include="FrmMostrarAviso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAviso.Designer.cs">
-      <DependentUpon>FrmAviso.cs</DependentUpon>
+    <Compile Include="FrmMostrarAviso.Designer.cs">
+      <DependentUpon>FrmMostrarAviso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCadastrarProcesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadastrarProcesso.Designer.cs">
+      <DependentUpon>FrmCadastrarProcesso.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
@@ -65,17 +75,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UC\UCListaArq.cs">
+    <Compile Include="UC\UCCadastrarArq.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\UCListaArq.Designer.cs">
-      <DependentUpon>UCListaArq.cs</DependentUpon>
+    <Compile Include="UC\UCCadastrarArq.Designer.cs">
+      <DependentUpon>UCCadastrarArq.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\UCMessage.cs">
+    <Compile Include="UC\UCListarArq.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCListarArq.Designer.cs">
+      <DependentUpon>UCListarArq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCMensagem.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC\UCMessage.Designer.cs">
-      <DependentUpon>UCMessage.cs</DependentUpon>
+      <DependentUpon>UCMensagem.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\UCArqv.cs">
       <SubType>UserControl</SubType>
@@ -89,14 +105,11 @@
     <Compile Include="UC\UCItem.Designer.cs">
       <DependentUpon>UCItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\UCUpload.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\UCUpload.Designer.cs">
-      <DependentUpon>UCUpload.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="FrmAviso.resx">
-      <DependentUpon>FrmAviso.cs</DependentUpon>
+    <EmbeddedResource Include="FrmCadastrarProcesso.resx">
+      <DependentUpon>FrmCadastrarProcesso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMostrarAviso.resx">
+      <DependentUpon>FrmMostrarAviso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
@@ -111,20 +124,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UC\UCListaArq.resx">
-      <DependentUpon>UCListaArq.cs</DependentUpon>
+    <EmbeddedResource Include="UC\UCCadastrarArq.resx">
+      <DependentUpon>UCCadastrarArq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCListarArq.resx">
+      <DependentUpon>UCListarArq.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCMessage.resx">
-      <DependentUpon>UCMessage.cs</DependentUpon>
+      <DependentUpon>UCMensagem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCArqv.resx">
       <DependentUpon>UCArqv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCItem.resx">
       <DependentUpon>UCItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\UCUpload.resx">
-      <DependentUpon>UCUpload.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -140,17 +153,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
+    <ProjectReference Include="..\BLL\MatildeRibokela.BLL.csproj">
       <Project>{7bc0266d-8fe6-441c-91db-0a77c831d665}</Project>
-      <Name>BLL</Name>
+      <Name>MatildeRibokela.BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DTO\DTO.csproj">
+    <ProjectReference Include="..\DTO\MatildeRibokela.DTO.csproj">
       <Project>{8605e114-77c4-4845-a265-60fda388e67e}</Project>
-      <Name>DTO</Name>
+      <Name>MatildeRibokela.DTO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HELPER\HELPER.csproj">
+    <ProjectReference Include="..\HELPER\MatildeRibokela.HELPER.csproj">
       <Project>{820F95AA-56CC-4CAB-AF9D-C883137510ED}</Project>
-      <Name>HELPER</Name>
+      <Name>MatildeRibokela.HELPER</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IBLL\MatildeRibokela.IBLL.csproj">
+      <Project>{562CAEE2-53B4-4609-86E2-EB3487AC4626}</Project>
+      <Name>MatildeRibokela.IBLL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

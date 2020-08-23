@@ -20,15 +20,15 @@ namespace MatildeRibokela
 {
     public partial class FrmMain : Form
     {
-        UCUpload ucUpload;
-        UCListaArq uCListaArq;
+        UCCadastrarArq uCCadastrar;
+        UCListarArq uCListaArq;
         Movimento movimento;
 
         public FrmMain()
         {
             InitializeComponent();
-            ucUpload = new UCUpload();
-            uCListaArq = new UCListaArq();
+            uCCadastrar = new UCCadastrarArq();
+            uCListaArq = new UCListarArq();
             movimento = new Movimento(this);
             movimento.DarMovimento(PanelTop);
 
@@ -48,11 +48,9 @@ namespace MatildeRibokela
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            WindowState = FormWindowState.Maximized;
 
-            if (new Arquivo().VerifyState().Count > 0)
-            {
-                new FrmAviso().ShowDialog();
-            }
+           
         }
 
         private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
@@ -62,7 +60,8 @@ namespace MatildeRibokela
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MudarTela(ucUpload, "Adicionar arquivo");
+            MudarTela(uCCadastrar, "Adicionar processo");
+          
         }
 
         private void MudarTela(UserControl tela, string nomeTela)
@@ -167,7 +166,7 @@ namespace MatildeRibokela
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MudarTela(uCListaArq, "Lista arquivos");
+            MudarTela(uCListaArq, "Lista processos");
         }
     }
 }

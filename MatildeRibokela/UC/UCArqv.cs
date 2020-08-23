@@ -14,13 +14,13 @@ namespace MatildeRibokela.UC
 {
     public partial class UCArqv : UserControl
     {
-        private ArquivoDTO arquivo;
+        private ProcessoDTO arquivo;
         public UCArqv()
         {
             InitializeComponent();
         }
 
-        public UCArqv(ArquivoDTO arquivo)
+        public UCArqv(ProcessoDTO arquivo)
         {
             InitializeComponent();
             this.arquivo = arquivo;
@@ -33,8 +33,7 @@ namespace MatildeRibokela.UC
 
         private void UCArqv_Load_1(object sender, EventArgs e)
         {
-            label1.Text = arquivo.Nome;
-            label2.Text = arquivo.Tamanho.ToString()+" KB";
+            
         }
     }
 }

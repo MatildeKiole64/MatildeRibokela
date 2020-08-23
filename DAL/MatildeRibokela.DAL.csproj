@@ -109,13 +109,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArquivoDAL.cs" />
-    <Compile Include="CategoriaDAL.cs" />
+    <Compile Include="ArguidoDAL.cs" />
+    <Compile Include="DetencaoDAL.cs" />
+    <Compile Include="PrazoDAL.cs" />
+    <Compile Include="ProcessoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\MatildeRibokela.DTO.csproj">
+      <Project>{8605E114-77C4-4845-A265-60FDA388E67E}</Project>
+      <Name>MatildeRibokela.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MatildeRibokela.IDAL\MatildeRibokela.IDAL.csproj">
+      <Project>{7F789D6F-5418-4CEB-879B-D67509C55974}</Project>
+      <Name>MatildeRibokela.IDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
