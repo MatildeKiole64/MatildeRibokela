@@ -9,6 +9,6 @@ namespace MatildeRibokela.IDAL
 {
     public interface IPrazoDAL
     {
-        long Create(PrazoDTO prazo);
+        long Create(PrazoDTO prazo, int tipo);
     }
 }

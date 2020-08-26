@@ -26,21 +26,28 @@ namespace DAL
             using (var ConexaoBD = new MySqlConnection(StrConexao))
             {
                 ConexaoBD.Open();
-                string sql = "INSERT INTO arquivo (caminho, data_upload, categoria_id) VALUES (@Caminho, @DataEntrada, @IdCategoria); SELECT LAST_INSERT_ID()";
+                string sql = "INSERT INTO arguido (nome, idade, residencia_hab, contacto1, contacto2, processo_id) " +
+                    "VALUES (@Nome, @Idade, @ResidenciaHabitual, @Contacto1, @Contacto2, @ProcessoId); SELECT LAST_INSERT_ID()";
                 Id = ConexaoBD.ExecuteScalar<long>(sql, arguido);
-
             }
             return Id;
         }
 
-        public int Update(ArguidoDTO arguido) 
+        public int Update(ArguidoDTO arguido)
         {
             throw new NotImplementedException();
         }
-        
-        public IList<ArguidoDTO> List()
+
+        public DataTable List()
         {
-            throw new NotImplementedException();
+            using (var ConexaoBD = new MySqlConnection(StrConexao))
+            {
+                DataTable dt = new DataTable();
+                string sql = "SELECT * FROM arguido";
+                var reader = ConexaoBD.ExecuteReader(sql);
+                dt.Load(reader);
+                return dt;
+            }
         }
 
         public int Delete(ArguidoDTO arguido)

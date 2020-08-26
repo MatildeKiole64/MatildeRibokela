@@ -49,11 +49,22 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="DetencaoDALTeste.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\MatildeRibokela.DAL.csproj">
+      <Project>{CF645D9C-072D-44A7-8965-47984E104FB9}</Project>
+      <Name>MatildeRibokela.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\MatildeRibokela.DTO.csproj">
+      <Project>{8605E114-77C4-4845-A265-60FDA388E67E}</Project>
+      <Name>MatildeRibokela.DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

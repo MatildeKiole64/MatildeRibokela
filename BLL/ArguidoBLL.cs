@@ -34,9 +34,26 @@ namespace BLL
             return resultado > 0;
         }
 
-        public IList<ArguidoDTO> List()
+        public List<ArguidoDTO> List()
         {
-            return arguidoDAL.List();
+            List<ArguidoDTO> arguidos = new List<ArguidoDTO>();
+            DataTable dt = arguidoDAL.List();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                ArguidoDTO arguido = new ArguidoDTO()
+                {
+                    Id = Convert.ToInt32(dt.Rows[i]["id"]),
+                    Idade = Convert.ToInt32(dt.Rows[i]["idade"]),
+                    ProcessoId = Convert.ToInt32(dt.Rows[i]["processo_id"]),
+                    Nome = dt.Rows[i]["Nome"].ToString(),
+                    Contacto1 = Convert.ToInt32(dt.Rows[i]["Contacto1"]),
+                    Contacto2 = Convert.ToInt32(dt.Rows[i]["Contacto2"]),
+                    ResidenciaHabitual = dt.Rows[i]["residencia_hab"].ToString(),
+                };
+
+                arguidos.Add(arguido);
+            }
+            return arguidos;
         }
 
         public bool Update(ArguidoDTO arguido)

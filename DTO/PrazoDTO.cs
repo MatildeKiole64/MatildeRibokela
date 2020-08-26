@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class PrazoDTO
+    public  class PrazoDTO
     {
-        public long Id { get; set; }
-        public DateTimeOffset Inicio { get; set; }
-        public DateTimeOffset Fim { get; set; }
-        public DateTimeOffset DataRevisaoMinistPub { get; set; }
+        public long Id { get; set; } 
+        public DateTime Inicio { get; set; }
+        public DateTime Fim { get; set; }
+        public DateTime DataRevisaoMinistPub { get; set; }
     }
 }

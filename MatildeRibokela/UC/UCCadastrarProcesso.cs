@@ -1,46 +1,83 @@
-﻿using BLL;
-using DTO;
-using IBLL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IBLL;
+using BLL;
+using DTO;
 
-namespace MatildeRibokela
+
+namespace MatildeRibokela.UC
 {
-    public partial class FrmCadastrarProcesso : Form
+    public partial class UCCadastrarProcesso : UserControl
     {
         IProcessoBLL processo = new ProcessoBLL();
-        IDetencaoBLL detencao = new DetencaoBLL();
         IArguidoBLL arguido = new ArguidoBLL();
         IPrazoBLL prazo = new PrazoBLL();
-        public FrmCadastrarProcesso()
+     
+       
+        public UCCadastrarProcesso()
         {
             InitializeComponent();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void siticoneDateTimePicker7_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void siticoneDateTimePicker8_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void siticoneDateTimePicker6_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void siticoneDateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void siticoneTextBox8_TextChanged(object sender, EventArgs e)
         {
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            DetencaoDTO detencaoDTO = new DetencaoDTO()
-            {
-                Flagrante = Flagrante.Checked,
-                Local = Local.Text
-            };
-
-            detencaoDTO.DataApresentacaoMinistPub = DataApresentacao.Value.ToUniversalTime();
-            detencaoDTO.Data = DataDetencao.Value.ToUniversalTime();
-            long IdDetencao = detencao.Create(detencaoDTO);
-
             PrazoDTO[] prazos = new PrazoDTO[3]
             {
                  new PrazoDTO()
@@ -62,22 +99,26 @@ namespace MatildeRibokela
                     DataRevisaoMinistPub = DataRevisao3.Value.ToUniversalTime()
                   }
 
-        };
-            prazos[0].Id = prazo.Create(prazos[0]);
-            prazos[1].Id = prazo.Create(prazos[1]);
-            prazos[2].Id = prazo.Create(prazos[2]);
+            };
+
+            prazos[0].Id = prazo.Create(prazos[0],0);
+            prazos[1].Id = prazo.Create(prazos[1],1);
+            prazos[2].Id = prazo.Create(prazos[2],2);
 
             ProcessoDTO processoDTO = new ProcessoDTO()
             {
-                DetencaoId = IdDetencao,
-                Inconveniencia = Inconveniencia.Checked,
                 Instrutor = Instrutor.Text,
                 NrProcesso = NumProcesso.Text,
                 NrRegisto = NumRegisto.Text,
-                DataRemissaoDist = DataRemissao.Value.ToUniversalTime(),
+                //DataRemissaoDist = DataRemissao.Value.ToUniversalTime(),
                 Prazo1Id = prazos[0].Id,
                 Prazo2Id = prazos[1].Id,
-                Prazo3Id = prazos[2].Id
+                Prazo3Id = prazos[2].Id,
+                CircunstId = Flagrante.Checked ? 1 : 2,
+                MantidapId = Inconveniencia.Checked ? 2 : 1,
+                //DataApresentacaoMinistPub = DataApresentacao.Value.ToUniversalTime(),
+                //DataDetencao = DataDetencao.Value.ToUniversalTime(),
+                LocalDetencao = Local.Text
             };
 
             processoDTO.Id = processo.Create(processoDTO);
@@ -112,6 +153,26 @@ namespace MatildeRibokela
             {
                 ListaArguidos.Items.Remove(lvwitem);
             }
+        }
+
+        private void UCCadastrarArq_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void siticoneGroupBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

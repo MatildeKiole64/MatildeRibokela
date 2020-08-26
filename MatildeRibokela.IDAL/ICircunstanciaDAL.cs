@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IBLL
+namespace MatildeRibokela.IDAL
 {
-    public interface IDetencaoBLL
+    public interface ICircunstanciaDAL
     {
-        long Create(DetencaoDTO detencao);
+        List<CircunstanciaDTO> List();
     }
 }

@@ -62,7 +62,7 @@
             this.PanelTop.Name = "PanelTop";
             this.PanelTop.ShadowColor = System.Drawing.Color.DimGray;
             this.PanelTop.ShadowShift = 1;
-            this.PanelTop.Size = new System.Drawing.Size(1564, 41);
+            this.PanelTop.Size = new System.Drawing.Size(1600, 41);
             this.PanelTop.TabIndex = 2;
             this.PanelTop.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
             // 
@@ -71,7 +71,7 @@
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1364, 0);
+            this.panel2.Location = new System.Drawing.Point(1400, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 41);
             this.panel2.TabIndex = 4;
@@ -131,9 +131,8 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(19, 1031);
+            this.pictureBox4.Location = new System.Drawing.Point(55, 1012);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(40, 41);
             this.pictureBox4.TabIndex = 31;
@@ -150,7 +149,7 @@
             this.button2.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.DimGray;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(821, 433);
+            this.button2.Location = new System.Drawing.Point(839, 433);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(324, 240);
             this.button2.TabIndex = 1;
@@ -167,7 +166,7 @@
             this.button1.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Gray;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(437, 433);
+            this.button1.Location = new System.Drawing.Point(455, 433);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(324, 240);
             this.button1.TabIndex = 0;
@@ -182,10 +181,10 @@
             // 
             this.panel1.AllowDrop = true;
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Location = new System.Drawing.Point(104, 43);
+            this.panel1.Location = new System.Drawing.Point(0, 43);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1369, 977);
+            this.panel1.Size = new System.Drawing.Size(1600, 956);
             this.panel1.TabIndex = 3;
             this.panel1.Visible = false;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
@@ -195,7 +194,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1564, 1100);
+            this.ClientSize = new System.Drawing.Size(1600, 1100);
             this.Controls.Add(this.PanelTop);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox4);

@@ -13,7 +13,6 @@ namespace IBLL
         bool Update(ArguidoDTO arguido);
         bool Delete(ArguidoDTO arguido);
         bool Delete(long id);
-        IList<ArguidoDTO>List();
-        
+        List<ArguidoDTO>List();
     }
 }

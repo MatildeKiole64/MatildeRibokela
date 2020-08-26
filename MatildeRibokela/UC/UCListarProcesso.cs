@@ -15,38 +15,42 @@ using IBLL;
 
 namespace MatildeRibokela.UC
 {
-    public partial class UCListarArq : UserControl
+    public partial class UCListarProcesso : UserControl
     {
         IProcessoBLL processoBLL = new ProcessoBLL();
-
-        public UCListarArq()
+        IArguidoBLL arguidoBLL = new ArguidoBLL();
+        List<ArguidoDTO> arguidos;
+        public UCListarProcesso()
         {
+
             InitializeComponent();
         }
 
         private void UCListaArq_Load(object sender, EventArgs e)
         {
             ActualizarDGV();
-            //Categoria.DataSource = categoriaBLL.List();
-            //Categoria.DisplayMember = "descricao";
-            //Categoria.ValueMember = "id";
+            TabelaProcessos.ClearSelection();
         }
 
         private void ActualizarDGV()
         {
             TabelaProcessos.RowTemplate.Height = 40;
-            Padding p = new Padding(0, 12, 0, 12);
-            TabelaProcessos.RowTemplate.DefaultCellStyle.Padding = p;
+            //Padding p = new Padding(0, 12, 0, 0);
+            //TabelaProcessos.RowTemplate.DefaultCellStyle.Padding = p;
             TabelaProcessos.DataSource = processoBLL.List();
-            TabelaProcessos.Columns[0].Visible = TabelaProcessos.Columns[2].Visible = TabelaProcessos.Columns[3].Visible = false;
-            TabelaProcessos.Columns[1].Width = 360;
-            TabelaProcessos.Columns[4].Width = 220;
-            TabelaProcessos.Columns[5].Width = 220;
+            arguidos = arguidoBLL.List();
+            TabelaProcessos.Columns[0].Visible = TabelaProcessos.Columns[4].Visible = false;
+            TabelaProcessos.Columns[10].Visible = TabelaProcessos.Columns[11].Visible = false;
+            TabelaProcessos.Columns[12].Visible = TabelaProcessos.Columns[6].Visible = false;
+            
+            //TabelaProcessos.Columns[1].Width = 360;
+            //TabelaProcessos.Columns[4].Width = 220;
+            //TabelaProcessos.Columns[5].Width = 220;
         }
 
         private void TheSearch_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -83,7 +87,7 @@ namespace MatildeRibokela.UC
         {
             foreach (DataGridViewRow item in TabelaProcessos.SelectedRows)
             {
-                
+
             }
         }
 
@@ -96,5 +100,28 @@ namespace MatildeRibokela.UC
         {
 
         }
+
+        private void TabelaProcessos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void TabelaProcessos_SelectionChanged(object sender, EventArgs e)
+        {
+            //ProcessoDTO processo = (ProcessoDTO)TabelaProcessos.Rows[TabelaProcessos.SelectedRows[0].Index].DataBoundItem;
+            //var Lista = arguidos.FindAll(a => a.ProcessoId == processo.Id);
+            //dataGridView1.DataSource = Lista;
+            //dataGridView1.Columns[0].Visible = dataGridView1.Columns[6].Visible = false;
+
+        }
+        private void TabelaProcessos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ProcessoDTO processo = (ProcessoDTO)TabelaProcessos.Rows[TabelaProcessos.SelectedRows[0].Index].DataBoundItem;
+            var Lista = arguidos.FindAll(a => a.ProcessoId == processo.Id);
+            dataGridView1.DataSource = Lista;
+            dataGridView1.Columns[0].Visible = dataGridView1.Columns[6].Visible = false;
+        }
+      
     }
 }
+

@@ -13,6 +13,6 @@ namespace IBLL
         bool Update(ProcessoDTO processo);
         bool Delete(ProcessoDTO processo);
         bool Delete(int Id);
-        IList<ProcessoDTO> List(string NumProcesso = null);
+        List<ProcessoDTO> List(string NumProcesso = null);
     }
 }

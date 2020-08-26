@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IArguidoDAL.cs" />
-    <Compile Include="IDetencaoDAL.cs" />
+    <Compile Include="ICircunstanciaDAL.cs" />
     <Compile Include="IPrazoDAL.cs" />
     <Compile Include="IProcessoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

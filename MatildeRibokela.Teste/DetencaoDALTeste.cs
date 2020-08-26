@@ -1,14 +1,18 @@
 ﻿using System;
+using DAL;
+using DTO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MatildeRibokela.Teste
 {
     [TestClass()]
-    public class UnitTest1
+    public class DetencaoDALTeste
     {
+
         [TestMethod()]
-        public void TestMethod1()
+        public void CreateTeste()
         {
+           
         }
     }
 }

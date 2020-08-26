@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IArguidoBLL.cs" />
-    <Compile Include="IDetencaoBLL.cs" />
+    <Compile Include="ICircunstanciaBLL.cs" />
     <Compile Include="IPrazoBLL.cs" />
     <Compile Include="IProcessoBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

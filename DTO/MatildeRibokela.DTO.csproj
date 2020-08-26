@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArguidoDTO.cs" />
-    <Compile Include="DetencaoDTO.cs" />
+    <Compile Include="CircunstanciaDTO.cs" />
     <Compile Include="PrazoDTO.cs" />
     <Compile Include="ProcessoDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

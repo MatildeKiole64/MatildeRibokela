@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace IBLL
 {
-    public interface IPrazoBLL
+    public interface ICircunstanciaBLL
     {
-        long Create(PrazoDTO prazo, int tipo);
+        List<CircunstanciaDTO> List();
     }
 }

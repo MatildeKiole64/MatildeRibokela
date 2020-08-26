@@ -20,15 +20,15 @@ namespace MatildeRibokela
 {
     public partial class FrmMain : Form
     {
-        UCCadastrarArq uCCadastrar;
-        UCListarArq uCListaArq;
+        UCCadastrarProcesso uCCadastrar;
+        UCListarProcesso uCListaArq;
         Movimento movimento;
 
         public FrmMain()
         {
             InitializeComponent();
-            uCCadastrar = new UCCadastrarArq();
-            uCListaArq = new UCListarArq();
+            uCCadastrar = new UCCadastrarProcesso();
+            uCListaArq = new UCListarProcesso();
             movimento = new Movimento(this);
             movimento.DarMovimento(PanelTop);
 
