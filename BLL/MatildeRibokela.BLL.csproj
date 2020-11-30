@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArguidoBLL.cs" />
-    <Compile Include="CircunstanciaBLL.cs" />
     <Compile Include="PrazoBLL.cs" />
     <Compile Include="ProcessoBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

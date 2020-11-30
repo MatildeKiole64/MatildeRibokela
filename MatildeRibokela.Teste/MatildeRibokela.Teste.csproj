@@ -49,14 +49,20 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DetencaoDALTeste.cs" />
+    <Compile Include="ArguidoDALTeste.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProcessoDALTeste.cs" />
+    <Compile Include="ProcessoBLLTeste.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BLL\MatildeRibokela.BLL.csproj">
+      <Project>{7BC0266D-8FE6-441C-91DB-0A77C831D665}</Project>
+      <Name>MatildeRibokela.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\MatildeRibokela.DAL.csproj">
       <Project>{CF645D9C-072D-44A7-8965-47984E104FB9}</Project>
       <Name>MatildeRibokela.DAL</Name>
@@ -64,6 +70,14 @@
     <ProjectReference Include="..\DTO\MatildeRibokela.DTO.csproj">
       <Project>{8605E114-77C4-4845-A265-60FDA388E67E}</Project>
       <Name>MatildeRibokela.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IBLL\MatildeRibokela.IBLL.csproj">
+      <Project>{562CAEE2-53B4-4609-86E2-EB3487AC4626}</Project>
+      <Name>MatildeRibokela.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MatildeRibokela.IDAL\MatildeRibokela.IDAL.csproj">
+      <Project>{7F789D6F-5418-4CEB-879B-D67509C55974}</Project>
+      <Name>MatildeRibokela.IDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

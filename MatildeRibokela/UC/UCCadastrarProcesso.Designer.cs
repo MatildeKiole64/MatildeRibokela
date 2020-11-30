@@ -32,7 +32,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.NumProcesso = new Siticone.UI.WinForms.SiticoneTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.siticoneGroupBox1 = new Siticone.UI.WinForms.SiticoneGroupBox();
+            this.groupBoxAmigos = new Siticone.UI.WinForms.SiticoneGroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.Contacto2 = new Siticone.UI.WinForms.SiticoneTextBox();
@@ -84,7 +84,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.Inconveniencia = new System.Windows.Forms.RadioButton();
             this.DataRemissao = new Siticone.UI.WinForms.SiticoneDateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
@@ -92,7 +91,7 @@
             this.Instrutor = new Siticone.UI.WinForms.SiticoneTextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.NumRegisto = new Siticone.UI.WinForms.SiticoneTextBox();
-            this.siticoneGroupBox1.SuspendLayout();
+            this.groupBoxAmigos.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.siticoneGroupBox2.SuspendLayout();
             this.siticoneGroupBox3.SuspendLayout();
@@ -110,6 +109,7 @@
             this.button5.TabIndex = 35;
             this.button5.Text = "Cancelar";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -140,47 +140,50 @@
             this.NumProcesso.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.NumProcesso.HoveredState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.NumProcesso.HoveredState.Parent = this.NumProcesso;
-            this.NumProcesso.Location = new System.Drawing.Point(57, 62);
+            this.NumProcesso.Location = new System.Drawing.Point(16, 62);
             this.NumProcesso.Name = "NumProcesso";
             this.NumProcesso.PasswordChar = '\0';
             this.NumProcesso.PlaceholderText = "";
             this.NumProcesso.SelectedText = "";
             this.NumProcesso.ShadowDecoration.Parent = this.NumProcesso;
-            this.NumProcesso.Size = new System.Drawing.Size(237, 35);
+            this.NumProcesso.Size = new System.Drawing.Size(192, 35);
             this.NumProcesso.TabIndex = 36;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(55, 41);
+            this.label1.Location = new System.Drawing.Point(14, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 17);
             this.label1.TabIndex = 37;
             this.label1.Text = "Proc. Nº";
             // 
-            // siticoneGroupBox1
+            // groupBoxAmigos
             // 
-            this.siticoneGroupBox1.Controls.Add(this.groupBox1);
-            this.siticoneGroupBox1.Controls.Add(this.label4);
-            this.siticoneGroupBox1.Controls.Add(this.ResidenciaHab);
-            this.siticoneGroupBox1.Controls.Add(this.label3);
-            this.siticoneGroupBox1.Controls.Add(this.button2);
-            this.siticoneGroupBox1.Controls.Add(this.button1);
-            this.siticoneGroupBox1.Controls.Add(this.ListaArguidos);
-            this.siticoneGroupBox1.Controls.Add(this.Idade);
-            this.siticoneGroupBox1.Controls.Add(this.label2);
-            this.siticoneGroupBox1.Controls.Add(this.NomeArguido);
-            this.siticoneGroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(168)))), ((int)(((byte)(67)))));
-            this.siticoneGroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.siticoneGroupBox1.ForeColor = System.Drawing.Color.White;
-            this.siticoneGroupBox1.Location = new System.Drawing.Point(57, 107);
-            this.siticoneGroupBox1.Name = "siticoneGroupBox1";
-            this.siticoneGroupBox1.ShadowDecoration.Parent = this.siticoneGroupBox1;
-            this.siticoneGroupBox1.Size = new System.Drawing.Size(612, 544);
-            this.siticoneGroupBox1.TabIndex = 38;
-            this.siticoneGroupBox1.Text = "Arguido(s)";
-            this.siticoneGroupBox1.Click += new System.EventHandler(this.siticoneGroupBox1_Click);
+            this.groupBoxAmigos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxAmigos.Controls.Add(this.groupBox1);
+            this.groupBoxAmigos.Controls.Add(this.label4);
+            this.groupBoxAmigos.Controls.Add(this.ResidenciaHab);
+            this.groupBoxAmigos.Controls.Add(this.label3);
+            this.groupBoxAmigos.Controls.Add(this.button2);
+            this.groupBoxAmigos.Controls.Add(this.button1);
+            this.groupBoxAmigos.Controls.Add(this.ListaArguidos);
+            this.groupBoxAmigos.Controls.Add(this.Idade);
+            this.groupBoxAmigos.Controls.Add(this.label2);
+            this.groupBoxAmigos.Controls.Add(this.NomeArguido);
+            this.groupBoxAmigos.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(168)))), ((int)(((byte)(67)))));
+            this.groupBoxAmigos.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.groupBoxAmigos.ForeColor = System.Drawing.Color.White;
+            this.groupBoxAmigos.Location = new System.Drawing.Point(16, 107);
+            this.groupBoxAmigos.Name = "groupBoxAmigos";
+            this.groupBoxAmigos.ShadowDecoration.Parent = this.groupBoxAmigos;
+            this.groupBoxAmigos.Size = new System.Drawing.Size(520, 544);
+            this.groupBoxAmigos.TabIndex = 38;
+            this.groupBoxAmigos.Text = "Arguido(s)";
+            this.groupBoxAmigos.Click += new System.EventHandler(this.siticoneGroupBox1_Click);
             // 
             // groupBox1
             // 
@@ -190,7 +193,7 @@
             this.groupBox1.Controls.Add(this.Contacto1);
             this.groupBox1.Location = new System.Drawing.Point(27, 187);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(558, 85);
+            this.groupBox1.Size = new System.Drawing.Size(463, 85);
             this.groupBox1.TabIndex = 46;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contactos";
@@ -200,7 +203,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(281, 22);
+            this.label6.Location = new System.Drawing.Point(242, 22);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(125, 17);
             this.label6.TabIndex = 47;
@@ -221,13 +224,13 @@
             this.Contacto2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Contacto2.HoveredState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Contacto2.HoveredState.Parent = this.Contacto2;
-            this.Contacto2.Location = new System.Drawing.Point(283, 42);
+            this.Contacto2.Location = new System.Drawing.Point(245, 42);
             this.Contacto2.Name = "Contacto2";
             this.Contacto2.PasswordChar = '\0';
             this.Contacto2.PlaceholderText = "";
             this.Contacto2.SelectedText = "";
             this.Contacto2.ShadowDecoration.Parent = this.Contacto2;
-            this.Contacto2.Size = new System.Drawing.Size(261, 30);
+            this.Contacto2.Size = new System.Drawing.Size(202, 30);
             this.Contacto2.TabIndex = 46;
             // 
             // label5
@@ -262,7 +265,7 @@
             this.Contacto1.PlaceholderText = "";
             this.Contacto1.SelectedText = "";
             this.Contacto1.ShadowDecoration.Parent = this.Contacto1;
-            this.Contacto1.Size = new System.Drawing.Size(260, 30);
+            this.Contacto1.Size = new System.Drawing.Size(227, 30);
             this.Contacto1.TabIndex = 44;
             // 
             // label4
@@ -297,7 +300,7 @@
             this.ResidenciaHab.PlaceholderText = "";
             this.ResidenciaHab.SelectedText = "";
             this.ResidenciaHab.ShadowDecoration.Parent = this.ResidenciaHab;
-            this.ResidenciaHab.Size = new System.Drawing.Size(558, 35);
+            this.ResidenciaHab.Size = new System.Drawing.Size(463, 35);
             this.ResidenciaHab.TabIndex = 44;
             // 
             // label3
@@ -305,7 +308,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(401, 55);
+            this.label3.Location = new System.Drawing.Point(361, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 17);
             this.label3.TabIndex = 43;
@@ -352,7 +355,7 @@
             this.ListaArguidos.HideSelection = false;
             this.ListaArguidos.Location = new System.Drawing.Point(27, 332);
             this.ListaArguidos.Name = "ListaArguidos";
-            this.ListaArguidos.Size = new System.Drawing.Size(558, 172);
+            this.ListaArguidos.Size = new System.Drawing.Size(463, 172);
             this.ListaArguidos.TabIndex = 41;
             this.ListaArguidos.UseCompatibleStateImageBehavior = false;
             this.ListaArguidos.View = System.Windows.Forms.View.Details;
@@ -395,13 +398,13 @@
             this.Idade.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Idade.HoveredState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Idade.HoveredState.Parent = this.Idade;
-            this.Idade.Location = new System.Drawing.Point(404, 75);
+            this.Idade.Location = new System.Drawing.Point(364, 75);
             this.Idade.Name = "Idade";
             this.Idade.PasswordChar = '\0';
             this.Idade.PlaceholderText = "";
             this.Idade.SelectedText = "";
             this.Idade.ShadowDecoration.Parent = this.Idade;
-            this.Idade.Size = new System.Drawing.Size(181, 35);
+            this.Idade.Size = new System.Drawing.Size(125, 35);
             this.Idade.TabIndex = 40;
             // 
             // label2
@@ -436,7 +439,7 @@
             this.NomeArguido.PlaceholderText = "";
             this.NomeArguido.SelectedText = "";
             this.NomeArguido.ShadowDecoration.Parent = this.NomeArguido;
-            this.NomeArguido.Size = new System.Drawing.Size(371, 35);
+            this.NomeArguido.Size = new System.Drawing.Size(331, 35);
             this.NomeArguido.TabIndex = 38;
             // 
             // DataDetencao
@@ -503,7 +506,7 @@
             // 
             this.siticoneSeparator1.Location = new System.Drawing.Point(0, 856);
             this.siticoneSeparator1.Name = "siticoneSeparator1";
-            this.siticoneSeparator1.Size = new System.Drawing.Size(1278, 22);
+            this.siticoneSeparator1.Size = new System.Drawing.Size(1100, 22);
             this.siticoneSeparator1.TabIndex = 43;
             // 
             // label9
@@ -680,7 +683,7 @@
             this.siticoneGroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(168)))), ((int)(((byte)(67)))));
             this.siticoneGroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.siticoneGroupBox2.ForeColor = System.Drawing.Color.White;
-            this.siticoneGroupBox2.Location = new System.Drawing.Point(695, 107);
+            this.siticoneGroupBox2.Location = new System.Drawing.Point(566, 107);
             this.siticoneGroupBox2.Name = "siticoneGroupBox2";
             this.siticoneGroupBox2.ShadowDecoration.Parent = this.siticoneGroupBox2;
             this.siticoneGroupBox2.Size = new System.Drawing.Size(524, 234);
@@ -710,7 +713,7 @@
             this.siticoneGroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(168)))), ((int)(((byte)(67)))));
             this.siticoneGroupBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.siticoneGroupBox3.ForeColor = System.Drawing.Color.White;
-            this.siticoneGroupBox3.Location = new System.Drawing.Point(695, 358);
+            this.siticoneGroupBox3.Location = new System.Drawing.Point(566, 358);
             this.siticoneGroupBox3.Name = "siticoneGroupBox3";
             this.siticoneGroupBox3.ShadowDecoration.Parent = this.siticoneGroupBox3;
             this.siticoneGroupBox3.Size = new System.Drawing.Size(524, 293);
@@ -896,7 +899,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label20.Location = new System.Drawing.Point(54, 703);
+            this.label20.Location = new System.Drawing.Point(15, 703);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(137, 17);
             this.label20.TabIndex = 70;
@@ -908,7 +911,7 @@
             this.radioButton3.Checked = true;
             this.radioButton3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton3.Location = new System.Drawing.Point(201, 701);
+            this.radioButton3.Location = new System.Drawing.Point(162, 701);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(201, 21);
             this.radioButton3.TabIndex = 71;
@@ -916,24 +919,12 @@
             this.radioButton3.Text = "Inadmissibilidade da L. Provis.";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton4.Location = new System.Drawing.Point(291, 703);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(83, 21);
-            this.radioButton4.TabIndex = 72;
-            this.radioButton4.Text = "Mandado";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
             // Inconveniencia
             // 
             this.Inconveniencia.AutoSize = true;
             this.Inconveniencia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Inconveniencia.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Inconveniencia.Location = new System.Drawing.Point(419, 703);
+            this.Inconveniencia.Location = new System.Drawing.Point(380, 703);
             this.Inconveniencia.Name = "Inconveniencia";
             this.Inconveniencia.Size = new System.Drawing.Size(110, 21);
             this.Inconveniencia.TabIndex = 73;
@@ -949,7 +940,7 @@
             this.DataRemissao.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.DataRemissao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DataRemissao.HoveredState.Parent = this.DataRemissao;
-            this.DataRemissao.Location = new System.Drawing.Point(57, 773);
+            this.DataRemissao.Location = new System.Drawing.Point(18, 773);
             this.DataRemissao.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DataRemissao.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DataRemissao.Name = "DataRemissao";
@@ -963,7 +954,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label21.Location = new System.Drawing.Point(54, 753);
+            this.label21.Location = new System.Drawing.Point(15, 753);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(229, 17);
             this.label21.TabIndex = 75;
@@ -975,7 +966,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(333, 753);
+            this.label22.Location = new System.Drawing.Point(294, 753);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(135, 17);
             this.label22.TabIndex = 77;
@@ -994,9 +985,10 @@
             this.Instrutor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.Instrutor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Instrutor.FocusedState.Parent = this.Instrutor;
+            this.Instrutor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Instrutor.HoveredState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Instrutor.HoveredState.Parent = this.Instrutor;
-            this.Instrutor.Location = new System.Drawing.Point(336, 773);
+            this.Instrutor.Location = new System.Drawing.Point(297, 773);
             this.Instrutor.Name = "Instrutor";
             this.Instrutor.PasswordChar = '\0';
             this.Instrutor.PlaceholderText = "";
@@ -1010,7 +1002,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(307, 41);
+            this.label24.Location = new System.Drawing.Point(215, 41);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(118, 17);
             this.label24.TabIndex = 98;
@@ -1031,19 +1023,19 @@
             this.NumRegisto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.NumRegisto.HoveredState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.NumRegisto.HoveredState.Parent = this.NumRegisto;
-            this.NumRegisto.Location = new System.Drawing.Point(310, 62);
+            this.NumRegisto.Location = new System.Drawing.Point(218, 62);
             this.NumRegisto.Name = "NumRegisto";
             this.NumRegisto.PasswordChar = '\0';
             this.NumRegisto.PlaceholderText = "";
             this.NumRegisto.SelectedText = "";
             this.NumRegisto.ShadowDecoration.Parent = this.NumRegisto;
-            this.NumRegisto.Size = new System.Drawing.Size(237, 35);
+            this.NumRegisto.Size = new System.Drawing.Size(192, 35);
             this.NumRegisto.TabIndex = 97;
             // 
             // UCCadastrarProcesso
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label24);
             this.Controls.Add(this.NumRegisto);
@@ -1054,20 +1046,20 @@
             this.Controls.Add(this.Inconveniencia);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton4);
             this.Controls.Add(this.siticoneGroupBox3);
             this.Controls.Add(this.siticoneGroupBox2);
             this.Controls.Add(this.siticoneSeparator1);
-            this.Controls.Add(this.siticoneGroupBox1);
+            this.Controls.Add(this.groupBoxAmigos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NumProcesso);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Name = "UCCadastrarProcesso";
-            this.Size = new System.Drawing.Size(1277, 999);
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Size = new System.Drawing.Size(1100, 974);
             this.Load += new System.EventHandler(this.UCCadastrarArq_Load);
-            this.siticoneGroupBox1.ResumeLayout(false);
-            this.siticoneGroupBox1.PerformLayout();
+            this.groupBoxAmigos.ResumeLayout(false);
+            this.groupBoxAmigos.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.siticoneGroupBox2.ResumeLayout(false);
@@ -1085,7 +1077,7 @@
         private System.Windows.Forms.Button button4;
         private Siticone.UI.WinForms.SiticoneTextBox NumProcesso;
         private System.Windows.Forms.Label label1;
-        private Siticone.UI.WinForms.SiticoneGroupBox siticoneGroupBox1;
+        private Siticone.UI.WinForms.SiticoneGroupBox groupBoxAmigos;
         private System.Windows.Forms.Label label4;
         private Siticone.UI.WinForms.SiticoneTextBox ResidenciaHab;
         private System.Windows.Forms.Label label3;
@@ -1135,7 +1127,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton Inconveniencia;
         private Siticone.UI.WinForms.SiticoneDateTimePicker DataRemissao;
         private System.Windows.Forms.Label label21;

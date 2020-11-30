@@ -9,17 +9,20 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BLL;
+using MatildeRibokela.BLL;
 using DTO;
 using Guna.UI2.WinForms;
 using Guna.UI2.WinForms.Suite;
 using HELPER;
+using IBLL;
+using MatildeRibokela.BLL;
 using MatildeRibokela.UC;
 
 namespace MatildeRibokela
 {
     public partial class FrmMain : Form
     {
+        IProcessoBLL processoBLL = new ProcessoBLL();
         UCCadastrarProcesso uCCadastrar;
         UCListarProcesso uCListaArq;
         Movimento movimento;
@@ -49,8 +52,13 @@ namespace MatildeRibokela
         private void FrmMain_Load(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Maximized;
-
-           
+            bool HasDocToRevisar = processoBLL.ListByDataRevisao().Count > 0;
+            if (HasDocToRevisar)
+            {
+                Hide();
+                FrmMostrarAviso Frm = new FrmMostrarAviso();
+                Frm.ShowDialog(this);
+            }
         }
 
         private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
@@ -61,7 +69,7 @@ namespace MatildeRibokela
         private void button1_Click(object sender, EventArgs e)
         {
             MudarTela(uCCadastrar, "Adicionar processo");
-          
+
         }
 
         private void MudarTela(UserControl tela, string nomeTela)

@@ -10,40 +10,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace MatildeRibokela.DAL
 {
     public class ProcessoDAL : IProcessoDAL
     {
         private string StrConexao;
         public ProcessoDAL()
         {
-            StrConexao = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
+            //StrConexao = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
+            StrConexao = "server = localhost; uid = root; pwd = ''; database = ribokeladb ";
         }
-
-        public long Create(ProcessoDTO processo)
+        public Guid Create(ProcessoDTO processo)
         {
-            long Id = 0;
+            Guid Id = Guid.Empty;
             using (var ConexaoBD = new MySqlConnection(StrConexao))
             {
                 ConexaoBD.Open();
-                string sql = "INSERT INTO processo (num_processo, num_registo, local_detencao, instrutor, data_remissao, data_detencao,data_apresentacao,circunst_id,mantidap_id,prazo1_id,prazo2_id,prazo3_id) " +
-                    "VALUES (@NrProcesso, @NrRegisto, @LocalDetencao, @Instrutor, @DataRemissaoDist, @DataDetencao, @DataApresentacaoMinistPub, @CircunstId,@MantidapId, @Prazo1Id, @Prazo2Id, @Prazo3Id); SELECT LAST_INSERT_ID()";
-                Id = ConexaoBD.ExecuteScalar<long>(sql, processo);
+
+                using (var TransicaoBD = ConexaoBD.BeginTransaction())
+                {
+                    string sql = "INSERT INTO processo (id, num_processo, num_registo, local_detencao, instrutor, data_remissao, data_detencao,data_apresentacao,circunst_prisao, manter_prisao) " +
+                        "VALUES (@Id, @NrProcesso, @NrRegisto, @LocalDetencao, @Instrutor, @DataRemissaoDist, @DataDetencao, @DataApresentacaoMinistPub, @CircunstPrisao,@ManterPrisao); SELECT LAST_INSERT_ID()";
+                    int resultado = ConexaoBD.Execute(sql, processo);
+                    if (resultado > 0)
+                    {
+                        Id = processo.Id;
+                        TransicaoBD.Commit();
+                    }
+                    else
+                    {
+                        TransicaoBD.Rollback();
+                    }
+                }
             }
             return Id;
         }
 
         public int Update(ProcessoDTO processo)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IList<ArguidoDTO> List()
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Delete(ArguidoDTO arguido)
         {
             throw new NotImplementedException();
         }
@@ -80,12 +83,12 @@ namespace DAL
             {
                 DataTable dt = new DataTable();
 
-                string sql = "SELECT * FROM nova_view";
+                string sql = "SELECT * FROM processo p";
 
                 if (!string.IsNullOrEmpty(NrProc))
                 {
-                    sql += " WHERE NrProcesso LIKE @NrProcesso OR NrRegisto LIKE @NrRegisto";
-                    var reader = ConexaoBD.ExecuteReader(sql, new { NrProcesso = "%" + NrProc + "%", NumRegisto = "%" + NrProc + "%" });
+                    sql += " WHERE (p.num_processo LIKE @NrProcesso OR p.num_registo LIKE @NrRegisto)";
+                    var reader = ConexaoBD.ExecuteReader(sql, new { NrProcesso = "%" + NrProc + "%", NrRegisto = "%" + NrProc + "%" });
                     dt.Load(reader);
                 }
                 else
@@ -97,5 +100,17 @@ namespace DAL
                 return dt;
             }
         }
+        public DataTable ListByDataRevisao()
+        {
+            using (var ConexaoBD = new MySqlConnection(StrConexao))
+            {
+                DataTable dt = new DataTable();
+                string sql = "SELECT p.id, num_processo, num_registo, instrutor,  pr.data_revisao FROM processo p, prazo pr WHERE p.id = pr.processo_id AND data_revisao = curdate()";
+                var reader = ConexaoBD.ExecuteReader(sql);
+                dt.Load(reader);
+                return dt;
+            }
+        }
+
     }
 }

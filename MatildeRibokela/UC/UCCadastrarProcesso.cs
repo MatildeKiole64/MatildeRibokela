@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using IBLL;
-using BLL;
+using MatildeRibokela.BLL;
 using DTO;
-
+using HELPER;
 
 namespace MatildeRibokela.UC
 {
@@ -19,8 +19,7 @@ namespace MatildeRibokela.UC
         IProcessoBLL processo = new ProcessoBLL();
         IArguidoBLL arguido = new ArguidoBLL();
         IPrazoBLL prazo = new PrazoBLL();
-     
-       
+
         public UCCadastrarProcesso()
         {
             InitializeComponent();
@@ -76,63 +75,80 @@ namespace MatildeRibokela.UC
 
         }
 
+        private int GetTipoCircunst()
+        {
+            return Flagrante.Checked ? 1 : 2;
+        }
+        private int GetTipoManterP()
+        {
+            return Inconveniencia.Checked ? 2 : 1;
+        }
         private void button4_Click(object sender, EventArgs e)
         {
+            ProcessoDTO processoDTO = new ProcessoDTO()
+            {
+                Id = Guid.NewGuid(),
+                Instrutor = Instrutor.Text,
+                NrProcesso = NumProcesso.Text,
+                NrRegisto = NumRegisto.Text,
+                LocalDetencao = Local.Text,
+                CircunstPrisao = (ProcessoDTO.TipoP)GetTipoCircunst(),
+                ManterPrisao = (ProcessoDTO.TipoM)GetTipoManterP(),
+                DataApresentacaoMinistPub = DataApresentacao.Value.ToUniversalTime(),
+                DataDetencao = DataDetencao.Value.ToUniversalTime(),
+                DataRemissaoDist = DataRemissao.Value.ToUniversalTime(),
+            };
+
+            Guid Id = processo.Create(processoDTO);
+
             PrazoDTO[] prazos = new PrazoDTO[3]
             {
                  new PrazoDTO()
                  {
+                    Id = Guid.NewGuid(),
                     Inicio = DataInicio1.Value.ToUniversalTime(),
                     Fim = DataFim1.Value.ToUniversalTime(),
-                    DataRevisaoMinistPub = DataRevisao1.Value.ToUniversalTime()
+                    DataRevisaoMinistPub = DataRevisao1.Value.ToUniversalTime(),
+                    Tipo = 1,
+                    ProcessoId = Id
                  },
                   new PrazoDTO()
                  {
+                    Id = Guid.NewGuid(),
                     Inicio = DataInicio2.Value.ToUniversalTime(),
                     Fim = DataFim2.Value.ToUniversalTime(),
-                    DataRevisaoMinistPub = DataRevisao2.Value.ToUniversalTime()
+                    DataRevisaoMinistPub = DataRevisao2.Value.ToUniversalTime(),
+                    Tipo = 2,
+                    ProcessoId = Id
                  },
                   new PrazoDTO()
                   {
+                    Id = Guid.NewGuid(),
                     Inicio = DataInicio3.Value.ToUniversalTime(),
                     Fim = DataFim3.Value.ToUniversalTime(),
-                    DataRevisaoMinistPub = DataRevisao3.Value.ToUniversalTime()
+                    DataRevisaoMinistPub = DataRevisao3.Value.ToUniversalTime(),
+                    Tipo = 3,
+                    ProcessoId = Id
                   }
-
             };
 
-            prazos[0].Id = prazo.Create(prazos[0],0);
-            prazos[1].Id = prazo.Create(prazos[1],1);
-            prazos[2].Id = prazo.Create(prazos[2],2);
-
-            ProcessoDTO processoDTO = new ProcessoDTO()
+            for (int i = 0; i < 3; i++)
             {
-                Instrutor = Instrutor.Text,
-                NrProcesso = NumProcesso.Text,
-                NrRegisto = NumRegisto.Text,
-                //DataRemissaoDist = DataRemissao.Value.ToUniversalTime(),
-                Prazo1Id = prazos[0].Id,
-                Prazo2Id = prazos[1].Id,
-                Prazo3Id = prazos[2].Id,
-                CircunstId = Flagrante.Checked ? 1 : 2,
-                MantidapId = Inconveniencia.Checked ? 2 : 1,
-                //DataApresentacaoMinistPub = DataApresentacao.Value.ToUniversalTime(),
-                //DataDetencao = DataDetencao.Value.ToUniversalTime(),
-                LocalDetencao = Local.Text
-            };
-
-            processoDTO.Id = processo.Create(processoDTO);
+                PrazoDTO prazoDTO = prazos[i];
+                prazo.Create(prazoDTO);
+            }
 
             foreach (ListViewItem lvwItem in ListaArguidos.Items)
             {
                 ArguidoDTO arguidoDTO = new ArguidoDTO()
                 {
+                    Id = Guid.NewGuid(),
                     Nome = lvwItem.SubItems[0].Text,
                     Idade = Convert.ToInt32(lvwItem.SubItems[1].Text),
                     ResidenciaHabitual = lvwItem.SubItems[2].Text,
                     Contacto1 = Convert.ToInt32(lvwItem.SubItems[3].Text),
                     Contacto2 = Convert.ToInt32(lvwItem.SubItems[4].Text),
-                    ProcessoId = processoDTO.Id
+                    ProcessoId = Id,
                 };
                 arguido.Create(arguidoDTO);
             }
@@ -145,6 +161,7 @@ namespace MatildeRibokela.UC
             lvw.SubItems.Add(ResidenciaHab.Text);
             lvw.SubItems.Add(Contacto1.Text);
             lvw.SubItems.Add(Contacto2.Text);
+            CaniveteSuico.Limpar(groupBoxAmigos);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -157,7 +174,8 @@ namespace MatildeRibokela.UC
 
         private void UCCadastrarArq_Load(object sender, EventArgs e)
         {
-            
+            int x = Parent.Width / 2 - Width / 2;
+            Location = new Point(x, 0);
         }
 
         private void label21_Click(object sender, EventArgs e)
@@ -173,6 +191,11 @@ namespace MatildeRibokela.UC
         private void siticoneGroupBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Limpar();
         }
     }
 }

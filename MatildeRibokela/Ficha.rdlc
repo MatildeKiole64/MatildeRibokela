@@ -135,7 +135,13 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Proc Nº</Value>
+                <Value>Proc Nº </Value>
+                <Style>
+                  <FontFamily>segoe ui</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!NrProcesso.Value,"DataSet2")</Value>
                 <Style>
                   <FontFamily>segoe ui</FontFamily>
                 </Style>
@@ -148,7 +154,7 @@
         <Top>6.05578cm</Top>
         <Left>1.71662cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Width>3.90229cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -167,7 +173,13 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Registado sob nº</Value>
+                <Value>Registado sob nº  </Value>
+                <Style>
+                  <FontFamily>segoe ui</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!NrRegisto.Value,"DataSet2")</Value>
                 <Style>
                   <FontFamily>segoe ui</FontFamily>
                 </Style>
@@ -180,7 +192,7 @@
         <Top>6.05578cm</Top>
         <Left>9.33333cm</Left>
         <Height>0.6cm</Height>
-        <Width>3.10854cm</Width>
+        <Width>5.45903cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -240,30 +252,6 @@
           </Border>
         </Style>
       </Image>
-      <Line Name="Line2">
-        <Top>7.13733cm</Top>
-        <Left>16.19927cm</Left>
-        <Height>0cm</Height>
-        <Width>6.77631cm</Width>
-        <ZIndex>5</ZIndex>
-        <Style>
-          <Border>
-            <Style>Dashed</Style>
-          </Border>
-        </Style>
-      </Line>
-      <Line Name="Line3">
-        <Top>7.75229cm</Top>
-        <Left>16.19927cm</Left>
-        <Height>0cm</Height>
-        <Width>6.77631cm</Width>
-        <ZIndex>6</ZIndex>
-        <Style>
-          <Border>
-            <Style>Dashed</Style>
-          </Border>
-        </Style>
-      </Line>
       <Tablix Name="Tablix1">
         <TablixBody>
           <TablixColumns>
@@ -393,21 +381,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox6">
+                    <Textbox Name="Nome">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!Nome.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <rd:DefaultName>Nome</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -423,21 +411,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox8">
+                    <Textbox Name="Idade">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!Idade.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox8</rd:DefaultName>
+                      <rd:DefaultName>Idade</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -453,21 +441,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Inconveniencia">
+                    <Textbox Name="ResidenciaHabitual">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!ResidenciaHabitual.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Inconveniencia</rd:DefaultName>
+                      <rd:DefaultName>ResidenciaHabitual</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -507,7 +495,7 @@
         <Left>1.71662cm</Left>
         <Height>1.2cm</Height>
         <Width>21.25896cm</Width>
-        <ZIndex>7</ZIndex>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -543,7 +531,25 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Data detenção:                                                           Local:</Value>
+                <Value>Data detenção: </Value>
+                <Style>
+                  <FontFamily>segoe ui</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!DataDetencao.Value,"DataSet2")</Value>
+                <Style>
+                  <FontFamily>segoe ui</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>                                                          Local: </Value>
+                <Style>
+                  <FontFamily>segoe ui</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!LocalDetencao.Value,"DataSet2")</Value>
                 <Style>
                   <FontFamily>segoe ui</FontFamily>
                 </Style>
@@ -557,7 +563,7 @@
         <Left>1.71662cm</Left>
         <Height>2.45208cm</Height>
         <Width>21.25896cm</Width>
-        <ZIndex>8</ZIndex>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -576,7 +582,13 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Data de apresentação ao Mº Pº</Value>
+                <Value>Data de apresentação ao Mº Pº </Value>
+                <Style>
+                  <FontFamily>segoe ui</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!DataApresentacaoMinistPub.Value,"DataSet2")</Value>
                 <Style>
                   <FontFamily>segoe ui</FontFamily>
                 </Style>
@@ -589,8 +601,8 @@
         <Top>13.83453cm</Top>
         <Left>1.79599cm</Left>
         <Height>0.6cm</Height>
-        <Width>8.48081cm</Width>
-        <ZIndex>9</ZIndex>
+        <Width>9.7863cm</Width>
+        <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -622,7 +634,7 @@
         <Left>1.79599cm</Left>
         <Height>0.6cm</Height>
         <Width>5.51625cm</Width>
-        <ZIndex>10</ZIndex>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -651,10 +663,10 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>13.83453cm</Top>
-        <Left>11.68812cm</Left>
+        <Left>12.32312cm</Left>
         <Height>0.6cm</Height>
         <Width>3.05562cm</Width>
-        <ZIndex>11</ZIndex>
+        <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -683,10 +695,10 @@
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
         <Top>14.61092cm</Top>
-        <Left>11.68812cm</Left>
+        <Left>12.32312cm</Left>
         <Height>0.6cm</Height>
         <Width>3.05562cm</Width>
-        <ZIndex>12</ZIndex>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -740,7 +752,7 @@
         <Left>1.7001cm</Left>
         <Height>3.41781cm</Height>
         <Width>21.25896cm</Width>
-        <ZIndex>13</ZIndex>
+        <ZIndex>11</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -773,7 +785,7 @@
         <Left>2.00437cm</Left>
         <Height>0.6cm</Height>
         <Width>6.41583cm</Width>
-        <ZIndex>14</ZIndex>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -805,7 +817,7 @@
         <Left>9.04229cm</Left>
         <Height>0.6cm</Height>
         <Width>6.25708cm</Width>
-        <ZIndex>15</ZIndex>
+        <ZIndex>13</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -823,7 +835,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Data revisão pelo Mº Pº:</Value>
+                <Value>Data revisão pelo Mº Pº: </Value>
                 <Style>
                   <FontFamily>segoe ui</FontFamily>
                 </Style>
@@ -834,10 +846,10 @@
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
         <Top>16.50104cm</Top>
-        <Left>16.19927cm</Left>
+        <Left>16.21578cm</Left>
         <Height>0.6cm</Height>
-        <Width>6.75979cm</Width>
-        <ZIndex>16</ZIndex>
+        <Width>6.7598cm</Width>
+        <ZIndex>14</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -869,7 +881,7 @@
         <Left>2.00438cm</Left>
         <Height>0.6cm</Height>
         <Width>6.41583cm</Width>
-        <ZIndex>17</ZIndex>
+        <ZIndex>15</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -901,7 +913,7 @@
         <Left>9.04229cm</Left>
         <Height>0.6cm</Height>
         <Width>6.25708cm</Width>
-        <ZIndex>18</ZIndex>
+        <ZIndex>16</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -933,7 +945,7 @@
         <Left>16.19927cm</Left>
         <Height>0.6cm</Height>
         <Width>6.75979cm</Width>
-        <ZIndex>19</ZIndex>
+        <ZIndex>17</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -965,7 +977,7 @@
         <Left>2.00438cm</Left>
         <Height>0.6cm</Height>
         <Width>6.41583cm</Width>
-        <ZIndex>20</ZIndex>
+        <ZIndex>18</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -997,7 +1009,7 @@
         <Left>9.04229cm</Left>
         <Height>0.6cm</Height>
         <Width>6.25708cm</Width>
-        <ZIndex>21</ZIndex>
+        <ZIndex>19</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1029,7 +1041,7 @@
         <Left>16.19927cm</Left>
         <Height>0.6cm</Height>
         <Width>6.7598cm</Width>
-        <ZIndex>22</ZIndex>
+        <ZIndex>20</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1061,7 +1073,7 @@
         <Left>1.7001cm</Left>
         <Height>0.6cm</Height>
         <Width>5.51625cm</Width>
-        <ZIndex>23</ZIndex>
+        <ZIndex>21</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1093,7 +1105,7 @@
         <Left>18.15718cm</Left>
         <Height>0.6cm</Height>
         <Width>0.64792cm</Width>
-        <ZIndex>24</ZIndex>
+        <ZIndex>22</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1125,7 +1137,7 @@
         <Left>15.87264cm</Left>
         <Height>0.6cm</Height>
         <Width>2.14343cm</Width>
-        <ZIndex>25</ZIndex>
+        <ZIndex>23</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1157,7 +1169,7 @@
         <Left>22.21853cm</Left>
         <Height>0.6cm</Height>
         <Width>0.64792cm</Width>
-        <ZIndex>26</ZIndex>
+        <ZIndex>24</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1189,7 +1201,7 @@
         <Left>19.93399cm</Left>
         <Height>0.6cm</Height>
         <Width>2.14343cm</Width>
-        <ZIndex>27</ZIndex>
+        <ZIndex>25</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1221,7 +1233,7 @@
         <Left>19.26371cm</Left>
         <Height>0.6cm</Height>
         <Width>0.64792cm</Width>
-        <ZIndex>28</ZIndex>
+        <ZIndex>26</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1253,7 +1265,7 @@
         <Left>16.66167cm</Left>
         <Height>0.6cm</Height>
         <Width>2.49621cm</Width>
-        <ZIndex>29</ZIndex>
+        <ZIndex>27</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1285,7 +1297,7 @@
         <Left>14.14444cm</Left>
         <Height>0.6cm</Height>
         <Width>0.64792cm</Width>
-        <ZIndex>30</ZIndex>
+        <ZIndex>28</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1317,7 +1329,7 @@
         <Left>8.93184cm</Left>
         <Height>0.6cm</Height>
         <Width>5.03621cm</Width>
-        <ZIndex>31</ZIndex>
+        <ZIndex>29</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1347,7 +1359,7 @@
         <Left>1.7001cm</Left>
         <Height>2.31979cm</Height>
         <Width>21.25896cm</Width>
-        <ZIndex>32</ZIndex>
+        <ZIndex>30</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1379,8 +1391,8 @@
         <Top>22.12633cm</Top>
         <Left>2.04206cm</Left>
         <Height>0.6cm</Height>
-        <Width>6.3464cm</Width>
-        <ZIndex>33</ZIndex>
+        <Width>6.08182cm</Width>
+        <ZIndex>31</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1412,7 +1424,196 @@
         <Left>2.00438cm</Left>
         <Height>0.6cm</Height>
         <Width>4.10524cm</Width>
+        <ZIndex>32</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Tablix Name="Tablix2">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>3.31072cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.43257cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Contacto1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=First(Fields!Contacto1.Value,"DataSet1")</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Contacto1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Dashed</Style>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Style>None</Style>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Style>None</Style>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Contacto2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=First(Fields!Contacto2.Value,"DataSet1")</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Contacto2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Dashed</Style>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Style>None</Style>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Style>None</Style>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Details1" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>6.73312cm</Top>
+        <Left>16.21578cm</Left>
+        <Height>0.6cm</Height>
+        <Width>6.74329cm</Width>
+        <ZIndex>33</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Textbox Name="DataRemissaoDist">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!DataRemissaoDist.Value, "DataSet2")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>DataRemissaoDist</rd:DefaultName>
+        <Top>22.12633cm</Top>
+        <Left>8.19443cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
         <ZIndex>34</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Instrutor">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Instrutor.Value, "DataSet2")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Instrutor</rd:DefaultName>
+        <Top>23.04659cm</Top>
+        <Left>6.18018cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>35</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1455,25 +1656,79 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="Contacto1">
+          <DataField>Contacto1</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Contacto2">
+          <DataField>Contacto2</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="Idade">
+          <DataField>Idade</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Nome">
+          <DataField>Nome</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProcessoId">
+          <DataField>ProcessoId</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="ResidenciaHabitual">
+          <DataField>ResidenciaHabitual</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DTO</rd:DataSetName>
+        <rd:TableName>ProcessoDTO</rd:TableName>
+        <rd:ObjectDataSourceSelectMethod>Arguidos</rd:ObjectDataSourceSelectMethod>
+        <rd:ObjectDataSourceType>DTO.ProcessoDTO, DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSet2">
+      <Query>
+        <DataSourceName>DTO</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CircunstPrisao">
+          <DataField>CircunstPrisao</DataField>
+          <rd:TypeName>DTO.ProcessoDTO+TipoP</rd:TypeName>
+        </Field>
+        <Field Name="DataApresentacaoMinistPub">
+          <DataField>DataApresentacaoMinistPub</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="DataDetencao">
+          <DataField>DataDetencao</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
         <Field Name="DataRemissaoDist">
           <DataField>DataRemissaoDist</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="DetencaoId">
-          <DataField>DetencaoId</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
-        </Field>
         <Field Name="Id">
           <DataField>Id</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
-        </Field>
-        <Field Name="Inconveniencia">
-          <DataField>Inconveniencia</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
+          <rd:TypeName>System.Guid</rd:TypeName>
         </Field>
         <Field Name="Instrutor">
           <DataField>Instrutor</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LocalDetencao">
+          <DataField>LocalDetencao</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ManterPrisao">
+          <DataField>ManterPrisao</DataField>
+          <rd:TypeName>DTO.ProcessoDTO+TipoM</rd:TypeName>
         </Field>
         <Field Name="NrProcesso">
           <DataField>NrProcesso</DataField>
@@ -1482,18 +1737,6 @@
         <Field Name="NrRegisto">
           <DataField>NrRegisto</DataField>
           <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Prazo1Id">
-          <DataField>Prazo1Id</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
-        </Field>
-        <Field Name="Prazo2Id">
-          <DataField>Prazo2Id</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
-        </Field>
-        <Field Name="Prazo3Id">
-          <DataField>Prazo3Id</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

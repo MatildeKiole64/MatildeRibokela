@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Siticone.UI">
+      <HintPath>C:\Users\Anderson M Kiole\Downloads\Siticone.UI-WinForms (1)\Siticone.UI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -43,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaniveteSuico.cs" />
     <Compile Include="Movimento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

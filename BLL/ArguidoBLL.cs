@@ -11,15 +11,15 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL
+namespace MatildeRibokela.BLL
 {
     public class ArguidoBLL : IArguidoBLL
     {
         IArguidoDAL arguidoDAL = new ArguidoDAL();
         public bool Create(ArguidoDTO arguido)
         {
-            long Id = arguidoDAL.Create(arguido);
-            return Id > 0;
+            Guid Id = arguidoDAL.Create(arguido);
+            return Id != null;
         }
 
         public bool Delete(ArguidoDTO arguido)
@@ -34,17 +34,17 @@ namespace BLL
             return resultado > 0;
         }
 
-        public List<ArguidoDTO> List()
+        public List<ArguidoDTO> List(ProcessoDTO processoDTO)
         {
             List<ArguidoDTO> arguidos = new List<ArguidoDTO>();
-            DataTable dt = arguidoDAL.List();
+            DataTable dt = arguidoDAL.List(processoDTO);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 ArguidoDTO arguido = new ArguidoDTO()
                 {
-                    Id = Convert.ToInt32(dt.Rows[i]["id"]),
+                    Id = Guid.Parse(dt.Rows[i]["id"].ToString()),
                     Idade = Convert.ToInt32(dt.Rows[i]["idade"]),
-                    ProcessoId = Convert.ToInt32(dt.Rows[i]["processo_id"]),
+                    ProcessoId = Guid.Parse(dt.Rows[i]["processo_id"].ToString()),
                     Nome = dt.Rows[i]["Nome"].ToString(),
                     Contacto1 = Convert.ToInt32(dt.Rows[i]["Contacto1"]),
                     Contacto2 = Convert.ToInt32(dt.Rows[i]["Contacto2"]),

@@ -11,10 +11,11 @@ namespace MatildeRibokela.IDAL
 {
     public interface IProcessoDAL
     {
-        long Create(ProcessoDTO processo);
+        Guid Create(ProcessoDTO processo);
         int Update(ProcessoDTO processo);
         int Delete(ProcessoDTO processo);
         int Delete(long id);
         DataTable List(string NrProc = null);
+        DataTable ListByDataRevisao();
     }
 }

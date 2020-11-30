@@ -9,6 +9,7 @@ namespace IBLL
 {
     public interface IPrazoBLL
     {
-        long Create(PrazoDTO prazo, int tipo);
+        bool Create(PrazoDTO prazo);
+        List<PrazoDTO> List(ProcessoDTO processoDTO);
     }
 }

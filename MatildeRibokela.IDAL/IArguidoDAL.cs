@@ -10,10 +10,11 @@ namespace MatildeRibokela.IDAL
 {
     public interface IArguidoDAL
     {
-        long Create(ArguidoDTO arguido);
+        Guid Create(ArguidoDTO arguido);
         int Update(ArguidoDTO arguido);
         int Delete(ArguidoDTO arguido);
         int Delete(long id);
+        DataTable List(ProcessoDTO processoDTO);
         DataTable List();
     }
 }

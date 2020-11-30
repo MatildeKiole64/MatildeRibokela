@@ -17,18 +17,32 @@ namespace DAL
         private string StrConexao;
         public ArguidoDAL()
         {
-            StrConexao = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
+            //StrConexao = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
+            StrConexao = "server = localhost; uid = root; pwd = ''; database = ribokeladb ";
         }
 
-        public long Create(ArguidoDTO arguido)
+        public Guid Create(ArguidoDTO arguido)
         {
-            long Id = 0;
+            Guid Id = Guid.Empty;
             using (var ConexaoBD = new MySqlConnection(StrConexao))
             {
                 ConexaoBD.Open();
-                string sql = "INSERT INTO arguido (nome, idade, residencia_hab, contacto1, contacto2, processo_id) " +
-                    "VALUES (@Nome, @Idade, @ResidenciaHabitual, @Contacto1, @Contacto2, @ProcessoId); SELECT LAST_INSERT_ID()";
-                Id = ConexaoBD.ExecuteScalar<long>(sql, arguido);
+
+                using (var TransicaoBD = ConexaoBD.BeginTransaction())
+                {
+                    string sql = "INSERT INTO arguido (id,nome, idade, residencia_hab, contacto1, contacto2, processo_id) " +
+                        "VALUES (@Id,@Nome, @Idade, @ResidenciaHabitual, @Contacto1, @Contacto2, @ProcessoId);";
+                    int resultado = ConexaoBD.Execute(sql, arguido);
+                    if (resultado > 0) 
+                    {
+                        Id = arguido.Id;
+                        TransicaoBD.Commit();
+                    }
+                    else 
+                    {
+                        TransicaoBD.Rollback();
+                    }
+                }
             }
             return Id;
         }
@@ -66,6 +80,18 @@ namespace DAL
             }
 
             return resultado;
+        }
+
+        public DataTable List(ProcessoDTO processoDTO)
+        {
+            using (var ConexaoBD = new MySqlConnection(StrConexao))
+            {
+                DataTable dt = new DataTable();
+                string sql = "SELECT a.id as id, nome, idade, residencia_hab, contacto1, contacto2, processo_id FROM arguido a, processo p WHERE a.processo_id = p.id AND a.processo_id = @Id";
+                var reader = ConexaoBD.ExecuteReader(sql, processoDTO);
+                dt.Load(reader);
+                return dt;
+            }
         }
     }
 }

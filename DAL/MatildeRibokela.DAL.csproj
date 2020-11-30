@@ -110,7 +110,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArguidoDAL.cs" />
-    <Compile Include="CircunstanciaDAL.cs" />
     <Compile Include="PrazoDAL.cs" />
     <Compile Include="ProcessoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
