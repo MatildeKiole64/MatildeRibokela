@@ -44,7 +44,7 @@ namespace MatildeRibokela.BLL
                 {
                     Id = Guid.Parse(dt.Rows[i]["id"].ToString()),
                     Instrutor = dt.Rows[i]["Instrutor"].ToString(),
-                    DataApresentacaoMinistPub = Convert.ToDateTime(dt.Rows[i]["data_apresentacao"]),
+                    //DataApresentacaoMinistPub = Convert.ToDateTime(dt.Rows[i]["data_apresentacao"]),
                     DataDetencao = Convert.ToDateTime(dt.Rows[i]["data_detencao"].ToString()),
                     DataRemissaoDist = Convert.ToDateTime(dt.Rows[i]["data_remissao"].ToString()),
                     LocalDetencao = dt.Rows[i]["local_detencao"].ToString(),

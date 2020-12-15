@@ -153,8 +153,11 @@
       <DependentUpon>UCArqv.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DTO.ArguidoDTO.datasource" />
     <None Include="Properties\DataSources\DTO.DetencaoDTO.datasource" />
     <None Include="Properties\DataSources\DTO.PrazoDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.ProcessoDTO+TipoM.datasource" />
+    <None Include="Properties\DataSources\DTO.ProcessoDTO+TipoP.datasource" />
     <None Include="Properties\DataSources\DTO.ProcessoDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

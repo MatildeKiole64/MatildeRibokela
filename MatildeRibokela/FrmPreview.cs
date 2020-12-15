@@ -14,7 +14,6 @@ namespace MatildeRibokela
     public partial class FrmPreview : Form
     {
         ProcessoDTO processoDTO;
-        PrazoDTO prazoDTO;
         public FrmPreview(ProcessoDTO processoDTO)
         {
             InitializeComponent();
@@ -23,7 +22,10 @@ namespace MatildeRibokela
 
         private void FrmPreview_Load(object sender, EventArgs e)
         {
+
             ProcessoDTOBindingSource.DataSource = processoDTO;
+            ArguidoDTOBindingSource.DataSource = processoDTO.Arguidos;
+            PrazoDTOBindingSource.DataSource = processoDTO.Prazos;
             this.reportViewer1.RefreshReport();
         }
     }

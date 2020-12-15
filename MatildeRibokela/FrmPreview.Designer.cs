@@ -34,33 +34,39 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ProcessoDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ArguidoDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PrazoDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ProcessoDTOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ArguidoDTOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrazoDTOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.ProcessoDTOBindingSource;
             reportDataSource2.Name = "DataSet2";
-            reportDataSource2.Value = this.ProcessoDTOBindingSource;
+            reportDataSource2.Value = this.ArguidoDTOBindingSource;
             reportDataSource3.Name = "DataSet3";
             reportDataSource3.Value = this.PrazoDTOBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "MatildeRibokela.Ficha.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 12);
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(776, 426);
+            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
             // ProcessoDTOBindingSource
             // 
-            this.ProcessoDTOBindingSource.DataMember = "Arguidos";
             this.ProcessoDTOBindingSource.DataSource = typeof(DTO.ProcessoDTO);
+            // 
+            // ArguidoDTOBindingSource
+            // 
+            this.ArguidoDTOBindingSource.DataSource = typeof(DTO.ArguidoDTO);
             // 
             // PrazoDTOBindingSource
             // 
@@ -76,6 +82,7 @@
             this.Text = "FrmPreview";
             this.Load += new System.EventHandler(this.FrmPreview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ProcessoDTOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ArguidoDTOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrazoDTOBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -85,6 +92,7 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource ProcessoDTOBindingSource;
+        private System.Windows.Forms.BindingSource ArguidoDTOBindingSource;
         private System.Windows.Forms.BindingSource PrazoDTOBindingSource;
     }
 }

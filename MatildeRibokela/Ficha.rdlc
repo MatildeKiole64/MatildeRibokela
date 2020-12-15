@@ -141,7 +141,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=First(Fields!NrProcesso.Value,"DataSet2")</Value>
+                <Value>=First(Fields!NrProcesso.Value,"DataSet1")</Value>
                 <Style>
                   <FontFamily>segoe ui</FontFamily>
                 </Style>
@@ -179,7 +179,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=First(Fields!NrRegisto.Value,"DataSet2")</Value>
+                <Value>=First(Fields!NrRegisto.Value,"DataSet1")</Value>
                 <Style>
                   <FontFamily>segoe ui</FontFamily>
                 </Style>
@@ -190,7 +190,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>6.05578cm</Top>
-        <Left>9.33333cm</Left>
+        <Left>9.96833cm</Left>
         <Height>0.6cm</Height>
         <Width>5.45903cm</Width>
         <ZIndex>2</ZIndex>
@@ -223,7 +223,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>6.05578cm</Top>
-        <Left>16.19927cm</Left>
+        <Left>18.73927cm</Left>
         <Height>0.6cm</Height>
         <Width>3.87583cm</Width>
         <ZIndex>3</ZIndex>
@@ -389,10 +389,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Nome.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Nome</rd:DefaultName>
@@ -419,10 +423,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Idade.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Idade</rd:DefaultName>
@@ -449,10 +457,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!ResidenciaHabitual.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>ResidenciaHabitual</rd:DefaultName>
@@ -490,7 +502,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
+        <DataSetName>DataSet2</DataSetName>
         <Top>8.6487cm</Top>
         <Left>1.71662cm</Left>
         <Height>1.2cm</Height>
@@ -537,7 +549,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=First(Fields!DataDetencao.Value,"DataSet2")</Value>
+                <Value>=First(FormatDateTime(Fields!DataDetencao.Value,DateFormat.ShortDate),"DataSet1")</Value>
                 <Style>
                   <FontFamily>segoe ui</FontFamily>
                 </Style>
@@ -549,7 +561,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=First(Fields!LocalDetencao.Value,"DataSet2")</Value>
+                <Value>=First(Fields!LocalDetencao.Value,"DataSet1")</Value>
                 <Style>
                   <FontFamily>segoe ui</FontFamily>
                 </Style>
@@ -588,7 +600,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=First(Fields!DataApresentacaoMinistPub.Value,"DataSet2")</Value>
+                <Value>=First(Fields!DataApresentacaoMinistPub.Value,"DataSet1")</Value>
                 <Style>
                   <FontFamily>segoe ui</FontFamily>
                 </Style>
@@ -598,7 +610,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>13.83453cm</Top>
+        <Top>13.86981cm</Top>
         <Left>1.79599cm</Left>
         <Height>0.6cm</Height>
         <Width>9.7863cm</Width>
@@ -630,7 +642,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>14.54037cm</Top>
+        <Top>14.50509cm</Top>
         <Left>1.79599cm</Left>
         <Height>0.6cm</Height>
         <Width>5.51625cm</Width>
@@ -727,9 +739,51 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>   Inicio do 1º prazo: </Value>
                 <Style>
                   <FontFamily>segoe ui</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=First(FormatDateTime(Fields!Inicio.Value,DateFormat.ShortDate), "DataSet3")</Value>
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve">                           </Value>
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>Fim do 1º prazo: </Value>
+                <Style>
+                  <FontFamily>segoe ui</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=First(FormatDateTime(Fields!Fim.Value,DateFormat.ShortDate), "DataSet3")</Value>
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve">                         </Value>
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>Data revisão pelo Mº Pº:  </Value>
+                <Style>
+                  <FontFamily>segoe ui</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=First(FormatDateTime(Fields!DataRevisaoMinistPub.Value,DateFormat.ShortDate), "DataSet3")</Value>
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -740,7 +794,130 @@
               <TextRun>
                 <Value />
                 <Style>
+                  <FontFamily>segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>   Inicio do 2º prazo: </Value>
+                <Style>
                   <FontFamily>segoe ui</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=First(FormatDateTime(Fields!Inicio.Value,DateFormat.ShortDate), "DataSet3")</Value>
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve">                           </Value>
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>Fim do 2º prazo: </Value>
+                <Style>
+                  <FontFamily>segoe ui</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=First(FormatDateTime(Fields!Fim.Value,DateFormat.ShortDate), "DataSet3")</Value>
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve">                         </Value>
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>Data revisão pelo Mº Pº: </Value>
+                <Style>
+                  <FontFamily>segoe ui</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=First(FormatDateTime(Fields!DataRevisaoMinistPub.Value,DateFormat.ShortDate), "DataSet3")</Value>
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve">              </Value>
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value xml:space="preserve">   </Value>
+                <Style>
+                  <FontFamily>segoe ui</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>   Inicio do 3º prazo: </Value>
+                <Style>
+                  <FontFamily>segoe ui</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=First(FormatDateTime(Fields!Inicio.Value,DateFormat.ShortDate), "DataSet3")</Value>
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve">                           </Value>
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>Fim do 3º prazo: </Value>
+                <Style>
+                  <FontFamily>segoe ui</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=First(FormatDateTime(Fields!Fim.Value,DateFormat.ShortDate), "DataSet3")</Value>
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>                         Data revisão pelo Mº Pº:  </Value>
+                <Style>
+                  <FontFamily>segoe ui</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Last(FormatDateTime(Fields!DataRevisaoMinistPub.Value,DateFormat.ShortDate), "DataSet3")</Value>
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -749,8 +926,8 @@
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
         <Top>16.06448cm</Top>
-        <Left>1.7001cm</Left>
-        <Height>3.41781cm</Height>
+        <Left>1.71662cm</Left>
+        <Height>3.2326cm</Height>
         <Width>21.25896cm</Width>
         <ZIndex>11</ZIndex>
         <Style>
@@ -758,294 +935,6 @@
             <Style>None</Style>
           </Border>
           <BackgroundColor>LightGrey</BackgroundColor>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox17">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Inicio do 1º prazo:</Value>
-                <Style>
-                  <FontFamily>segoe ui</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>16.50104cm</Top>
-        <Left>2.00437cm</Left>
-        <Height>0.6cm</Height>
-        <Width>6.41583cm</Width>
-        <ZIndex>12</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox18">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Fim do 1º prazo:</Value>
-                <Style>
-                  <FontFamily>segoe ui</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>16.50104cm</Top>
-        <Left>9.04229cm</Left>
-        <Height>0.6cm</Height>
-        <Width>6.25708cm</Width>
-        <ZIndex>13</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox19">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Data revisão pelo Mº Pº: </Value>
-                <Style>
-                  <FontFamily>segoe ui</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>16.50104cm</Top>
-        <Left>16.21578cm</Left>
-        <Height>0.6cm</Height>
-        <Width>6.7598cm</Width>
-        <ZIndex>14</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox20">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Inicio do 2º prazo:</Value>
-                <Style>
-                  <FontFamily>segoe ui</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>17.48cm</Top>
-        <Left>2.00438cm</Left>
-        <Height>0.6cm</Height>
-        <Width>6.41583cm</Width>
-        <ZIndex>15</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox21">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Fim do 2º prazo:</Value>
-                <Style>
-                  <FontFamily>segoe ui</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>17.48cm</Top>
-        <Left>9.04229cm</Left>
-        <Height>0.6cm</Height>
-        <Width>6.25708cm</Width>
-        <ZIndex>16</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox22">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Data revisão pelo Mº Pº:</Value>
-                <Style>
-                  <FontFamily>segoe ui</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>17.48cm</Top>
-        <Left>16.19927cm</Left>
-        <Height>0.6cm</Height>
-        <Width>6.75979cm</Width>
-        <ZIndex>17</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox23">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Inicio do 3º prazo:</Value>
-                <Style>
-                  <FontFamily>segoe ui</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>18.53833cm</Top>
-        <Left>2.00438cm</Left>
-        <Height>0.6cm</Height>
-        <Width>6.41583cm</Width>
-        <ZIndex>18</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox24">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Fim do 3º prazo:</Value>
-                <Style>
-                  <FontFamily>segoe ui</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>18.53833cm</Top>
-        <Left>9.04229cm</Left>
-        <Height>0.6cm</Height>
-        <Width>6.25708cm</Width>
-        <ZIndex>19</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox25">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Data revisão pelo Mº Pº:</Value>
-                <Style>
-                  <FontFamily>segoe ui</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>18.53833cm</Top>
-        <Left>16.19927cm</Left>
-        <Height>0.6cm</Height>
-        <Width>6.7598cm</Width>
-        <ZIndex>20</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -1073,7 +962,7 @@
         <Left>1.7001cm</Left>
         <Height>0.6cm</Height>
         <Width>5.51625cm</Width>
-        <ZIndex>21</ZIndex>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1105,7 +994,7 @@
         <Left>18.15718cm</Left>
         <Height>0.6cm</Height>
         <Width>0.64792cm</Width>
-        <ZIndex>22</ZIndex>
+        <ZIndex>13</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1137,7 +1026,7 @@
         <Left>15.87264cm</Left>
         <Height>0.6cm</Height>
         <Width>2.14343cm</Width>
-        <ZIndex>23</ZIndex>
+        <ZIndex>14</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1169,7 +1058,7 @@
         <Left>22.21853cm</Left>
         <Height>0.6cm</Height>
         <Width>0.64792cm</Width>
-        <ZIndex>24</ZIndex>
+        <ZIndex>15</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1201,7 +1090,7 @@
         <Left>19.93399cm</Left>
         <Height>0.6cm</Height>
         <Width>2.14343cm</Width>
-        <ZIndex>25</ZIndex>
+        <ZIndex>16</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1233,7 +1122,7 @@
         <Left>19.26371cm</Left>
         <Height>0.6cm</Height>
         <Width>0.64792cm</Width>
-        <ZIndex>26</ZIndex>
+        <ZIndex>17</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1265,7 +1154,7 @@
         <Left>16.66167cm</Left>
         <Height>0.6cm</Height>
         <Width>2.49621cm</Width>
-        <ZIndex>27</ZIndex>
+        <ZIndex>18</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1297,7 +1186,7 @@
         <Left>14.14444cm</Left>
         <Height>0.6cm</Height>
         <Width>0.64792cm</Width>
-        <ZIndex>28</ZIndex>
+        <ZIndex>19</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1329,7 +1218,7 @@
         <Left>8.93184cm</Left>
         <Height>0.6cm</Height>
         <Width>5.03621cm</Width>
-        <ZIndex>29</ZIndex>
+        <ZIndex>20</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1348,7 +1237,60 @@
             <TextRuns>
               <TextRun>
                 <Value />
-                <Style />
+                <Style>
+                  <FontFamily>segoe ui</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>  Processo Remetido à distribuição em: </Value>
+                <Style>
+                  <FontFamily>segoe ui</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=First(FormatDateTime(Fields!DataRemissaoDist.Value,DateFormat.ShortDate), "DataSet1")</Value>
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value xml:space="preserve">  </Value>
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>O instrutor do processo: </Value>
+                <Style>
+                  <FontFamily>segoe ui</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!Instrutor.Value, "DataSet1")</Value>
+                <Style>
+                  <FontFamily>segoe UI</FontFamily>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -1359,7 +1301,7 @@
         <Left>1.7001cm</Left>
         <Height>2.31979cm</Height>
         <Width>21.25896cm</Width>
-        <ZIndex>30</ZIndex>
+        <ZIndex>21</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1371,78 +1313,11 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox35">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Processo Remetido à distribuição em:</Value>
-                <Style>
-                  <FontFamily>segoe ui</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox35</rd:DefaultName>
-        <Top>22.12633cm</Top>
-        <Left>2.04206cm</Left>
-        <Height>0.6cm</Height>
-        <Width>6.08182cm</Width>
-        <ZIndex>31</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox36">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>O instrutor do processo:</Value>
-                <Style>
-                  <FontFamily>segoe ui</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox35</rd:DefaultName>
-        <Top>23.04659cm</Top>
-        <Left>2.00438cm</Left>
-        <Height>0.6cm</Height>
-        <Width>4.10524cm</Width>
-        <ZIndex>32</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Tablix Name="Tablix2">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.31072cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>3.43257cm</Width>
+              <Width>1.80029cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -1458,11 +1333,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=First(Fields!Contacto1.Value,"DataSet1")</Value>
-                              <Style />
+                              <Value>=Fields!Contacto1.Value</Value>
+                              <Style>
+                                <FontFamily>segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Contacto1</rd:DefaultName>
@@ -1475,51 +1354,7 @@
                           <Style>None</Style>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
-                          <Style>Dashed</Style>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Style>None</Style>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Style>None</Style>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Contacto2">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=First(Fields!Contacto2.Value,"DataSet1")</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Contacto2</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <TopBorder>
-                          <Style>None</Style>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Black</Color>
-                          <Style>Dashed</Style>
+                          <Style>Dotted</Style>
                         </BottomBorder>
                         <LeftBorder>
                           <Style>None</Style>
@@ -1542,7 +1377,6 @@
         <TablixColumnHierarchy>
           <TablixMembers>
             <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -1552,68 +1386,125 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
-        <Top>6.73312cm</Top>
-        <Left>16.21578cm</Left>
+        <DataSetName>DataSet2</DataSetName>
+        <Top>6.79662cm</Top>
+        <Left>18.75578cm</Left>
         <Height>0.6cm</Height>
-        <Width>6.74329cm</Width>
-        <ZIndex>33</ZIndex>
+        <Width>1.80029cm</Width>
+        <ZIndex>22</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="DataRemissaoDist">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!DataRemissaoDist.Value, "DataSet2")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>DataRemissaoDist</rd:DefaultName>
-        <Top>22.12633cm</Top>
-        <Left>8.19443cm</Left>
+      <Tablix Name="Tablix3">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1.92624cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Contacto3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Contacto2.Value</Value>
+                              <Style>
+                                <FontFamily>segoe UI</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Contacto2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Style>None</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Style>Dotted</Style>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Style>None</Style>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Style>None</Style>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Details2" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSet2</DataSetName>
+        <Top>6.78278cm</Top>
+        <Left>20.95264cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
-        <ZIndex>34</ZIndex>
+        <Width>1.92624cm</Width>
+        <ZIndex>23</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
         </Style>
-      </Textbox>
-      <Textbox Name="Instrutor">
+      </Tablix>
+      <Textbox Name="Textbox19">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!Instrutor.Value, "DataSet2")</Value>
-                <Style />
+                <Value>/</Value>
+                <Style>
+                  <FontFamily>segoe ui</FontFamily>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Instrutor</rd:DefaultName>
-        <Top>23.04659cm</Top>
-        <Left>6.18018cm</Left>
+        <rd:DefaultName>Textbox19</rd:DefaultName>
+        <Top>6.76161cm</Top>
+        <Left>20.62663cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
-        <ZIndex>35</ZIndex>
+        <Width>0.32602cm</Width>
+        <ZIndex>24</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1625,10 +1516,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>10.38542in</Height>
+    <Height>10.96217in</Height>
     <Style />
   </Body>
-  <Width>9.70833in</Width>
+  <Width>10.24528in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -1646,53 +1537,11 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>dc79a177-02ae-4f50-b71a-779a7b09bb27</rd:DataSourceID>
+      <rd:DataSourceID>84439aaa-28ee-4514-9c28-c3bbd04525bc</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
-      <Query>
-        <DataSourceName>DTO</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="Contacto1">
-          <DataField>Contacto1</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Contacto2">
-          <DataField>Contacto2</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Id">
-          <DataField>Id</DataField>
-          <rd:TypeName>System.Guid</rd:TypeName>
-        </Field>
-        <Field Name="Idade">
-          <DataField>Idade</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Nome">
-          <DataField>Nome</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ProcessoId">
-          <DataField>ProcessoId</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
-        </Field>
-        <Field Name="ResidenciaHabitual">
-          <DataField>ResidenciaHabitual</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>DTO</rd:DataSetName>
-        <rd:TableName>ProcessoDTO</rd:TableName>
-        <rd:ObjectDataSourceSelectMethod>Arguidos</rd:ObjectDataSourceSelectMethod>
-        <rd:ObjectDataSourceType>DTO.ProcessoDTO, DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DataSet2">
       <Query>
         <DataSourceName>DTO</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -1743,6 +1592,84 @@
         <rd:DataSetName>DTO</rd:DataSetName>
         <rd:TableName>ProcessoDTO</rd:TableName>
         <rd:ObjectDataSourceType>DTO.ProcessoDTO, DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSet2">
+      <Query>
+        <DataSourceName>DTO</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Contacto1">
+          <DataField>Contacto1</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Contacto2">
+          <DataField>Contacto2</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="Idade">
+          <DataField>Idade</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Nome">
+          <DataField>Nome</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProcessoId">
+          <DataField>ProcessoId</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="ResidenciaHabitual">
+          <DataField>ResidenciaHabitual</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DTO</rd:DataSetName>
+        <rd:TableName>ArguidoDTO</rd:TableName>
+        <rd:ObjectDataSourceType>DTO.ArguidoDTO, DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSet3">
+      <Query>
+        <DataSourceName>DTO</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="DataRevisaoMinistPub">
+          <DataField>DataRevisaoMinistPub</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Fim">
+          <DataField>Fim</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="Inicio">
+          <DataField>Inicio</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ProcessoId">
+          <DataField>ProcessoId</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="Tipo">
+          <DataField>Tipo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DTO</rd:DataSetName>
+        <rd:TableName>PrazoDTO</rd:TableName>
+        <rd:ObjectDataSourceType>DTO.PrazoDTO, DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

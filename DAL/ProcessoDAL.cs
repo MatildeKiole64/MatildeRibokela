@@ -105,7 +105,7 @@ namespace MatildeRibokela.DAL
             using (var ConexaoBD = new MySqlConnection(StrConexao))
             {
                 DataTable dt = new DataTable();
-                string sql = "SELECT p.id, num_processo, num_registo, instrutor,  pr.data_revisao FROM processo p, prazo pr WHERE p.id = pr.processo_id AND data_revisao = curdate()";
+                string sql = "SELECT * FROM processo p, prazo pr WHERE p.id = pr.processo_id AND data_revisao = curdate()";
                 var reader = ConexaoBD.ExecuteReader(sql);
                 dt.Load(reader);
                 return dt;
