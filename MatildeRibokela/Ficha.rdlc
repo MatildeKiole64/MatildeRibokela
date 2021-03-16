@@ -980,9 +980,9 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!CircunstPrisao.Value,"DataSet1")</Value>
                 <Style>
-                  <FontFamily>Wingdings2</FontFamily>
+                  <FontFamily>segoe ui</FontFamily>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -990,10 +990,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox27</rd:DefaultName>
-        <Top>13.83453cm</Top>
+        <Top>13.82875cm</Top>
         <Left>18.15718cm</Left>
         <Height>0.6cm</Height>
-        <Width>0.64792cm</Width>
+        <Width>1.77681cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
